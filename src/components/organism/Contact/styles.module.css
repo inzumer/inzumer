@@ -1,0 +1,36 @@
+.form {
+  /* 1.Positioning */
+  display: flex;
+  flex-direction: column;
+
+  /* 2.Box model */
+  width: 100%;
+}
+
+.form__container_button {
+  /* 1.Positioning */
+  display: flex;
+  justify-content: flex-end;
+
+  /* 2.Box model */
+  width: 100%;
+  max-width: var(--space-400);
+}
+
+.form__button {
+  /* 3. Typography */
+  color: white;
+
+  /* 3. Typography */
+  font-family: var(--font-roboto-mono);
+
+  /* 4.Visuals */
+  background-color: var(--black-light);
+  border: 1px solid var(--gray-dark);
+  transition: background-color .3s ease;
+}
+
+.form__button:hover {
+  /* 4.Visuals */
+  background-color: var(--primary-dark);
+}
