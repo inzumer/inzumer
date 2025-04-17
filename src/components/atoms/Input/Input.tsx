@@ -1,9 +1,10 @@
 /** Resources */
 import { RichText } from '@components';
-import { InputTypes } from '@types';
 
 /** Styles */
 import styles from './styles.module.css';
+
+type InputTypes = 'text' | 'email' | 'textarea';
 
 interface InputProps {
   id: string;
@@ -22,7 +23,7 @@ const Input: React.FC<InputProps> = ({id, type, value, label, placeholder, onCha
   };
 
   return (
-    <div className={styles.form__container}>
+    <div className={`${styles.form__container} ${type === 'textarea' && styles.form__container_textarea}`}>
       <label htmlFor={id}>
         <RichText id={`${id}-label`} variant="s3" text={label} />
       </label>

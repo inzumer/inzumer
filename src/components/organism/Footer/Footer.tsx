@@ -2,7 +2,7 @@
 
 /** Resources */
 import { Button, Icon, Navigate, RichText } from '@components';
-import { FOOTER, LANGUAGES } from '@constants';
+import { SOCIAL, LANGUAGES } from '@constants';
 import { Icons } from '@assets';
 import { useTranslation } from 'react-i18next';
 
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
           <div className={styles.footer__container_box}>
             <RichText id='footer-social-title' variant='p1' text={t('footer.social')} className={styles.footer__text} />
             <div className={styles.footer__container_box_items}>
-              {FOOTER.map((item, index) => (
+              {SOCIAL.map((item, index) => (
                 <Navigate id={`footer-social-link-${index}`} href={item.url} key={index} external>
                   <Icon name={item.name as keyof typeof Icons} height={30} width={30} />
                 </Navigate>

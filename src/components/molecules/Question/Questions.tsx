@@ -30,7 +30,7 @@ const Question: React.FC <QuestionProps> = ({ id, title, date, location, link, u
   return (
     <div className={styles.question}>
 
-      <div className={`${styles.question__header} ${isOpen && styles.question__header_active }`} onClick={toggle}>
+      <div className={styles.question__header} onClick={toggle}>
         <div className={styles.question__title}>
           <RichText id={`question-title-${id}`} text={title} variant='s3' className={styles.question__text} bold />
           { isDesktop && <RichText id={`question-date-${id}`} text={date} variant='s3' className={styles.question__text} bold /> }
@@ -39,7 +39,7 @@ const Question: React.FC <QuestionProps> = ({ id, title, date, location, link, u
       </div>
 
       <div className={`${styles.question__content} ${isOpen && styles.question__content_open}`}>
-        { !isDesktop && <Icon name={icon} height={80} width={80} /> }
+        { !isDesktop && <Icon name={icon} height={80} width={80} className={styles.question__icon_experience} /> }
 
         <div className={styles.question__description_header}>
           <div className={styles.question__description_location}>

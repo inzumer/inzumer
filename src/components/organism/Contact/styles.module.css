@@ -5,6 +5,7 @@
 
   /* 2.Box model */
   width: 100%;
+  max-width: var(--space-400);
 }
 
 .form__container_button {
@@ -14,23 +15,20 @@
 
   /* 2.Box model */
   width: 100%;
-  max-width: var(--space-400);
 }
 
 .form__button {
   /* 3. Typography */
   color: white;
-
-  /* 3. Typography */
   font-family: var(--font-roboto-mono);
+  text-transform: uppercase;
 
   /* 4.Visuals */
-  background-color: var(--black-light);
-  border: 1px solid var(--gray-dark);
+  background-color: var(--secondary-light);
   transition: background-color .3s ease;
 }
 
 .form__button:hover {
   /* 4.Visuals */
-  background-color: var(--primary-dark);
+  background-color: var(--secondary);
 }

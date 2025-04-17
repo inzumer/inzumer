@@ -7,6 +7,12 @@
 
   /* 2.Box model */
   width: 100%;
+  height: var(--space-64);
+}
+
+.form__container_textarea {
+  /* 2.Box model */
+  height: auto;
 }
 
 .form__input {

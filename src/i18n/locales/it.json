@@ -1,0 +1,59 @@
+{
+  "header": {
+    "about": "Chi sono",
+    "work": "Lavoro",
+    "experience": "Esperienza",
+    "projects": "Progetti",
+    "contact": "Contatto"
+  },
+  "footer": {
+    "about": "Chi sono",
+    "social": "Reti sociali",
+    "language": "Lingua",
+    "disclaimer": "Sviluppato da @inzumer — o Nahuel Zamuner, se preferisci."
+  },
+  "presentation": {
+    "title-one": "Ciao",
+    "title-two": "sono Nahuel Zamuner"
+  },
+  "about": {
+    "title": "Su Di Me",
+    "text-one": "Sviluppo e ottimizzo interfacce, dando priorità all’accessibilità e all’affidabilità. Ho più di 3 anni di esperienza come ",
+    "text-two": ", partecipando attivamente alle decisioni tecniche e di prodotto dal lato frontend. Mi concentro nel garantire performance, stabilità e qualità in ogni progetto a cui partecipo. Sono motivato a restare aggiornato con le tecnologie del mondo frontend e ad affrontare sfide che mi aiutino a crescere professionalmente."
+  },
+  "skills": {
+    "title": "Competenze Principali"
+  },
+  "work": {
+    "title": "Il Mio Lavoro",
+    "text": "Queste sono alcune delle aziende a cui ho contribuito."
+  },
+  "experience": {
+    "title": "Esperienza Professionale",
+    "freelancer": "Durante la mia esperienza come sviluppatore frontend freelance, mi sono concentrato sulla creazione di applicazioni web da zero. Ho collaborato strettamente con i team UX/UI, partecipando attivamente alla definizione delle interfacce e dei flussi utente. In alcuni progetti ho anche assunto il ruolo di \"designer\", realizzando proposte visive dalla fase di ricerca fino ai wireframe finali. Questa esperienza mi ha permesso di sviluppare una visione completa del prodotto, combinando design, sviluppo e usabilità.",
+    "meli-ssr": "Ho sviluppato servizi, middleware e controller per facilitare l'interazione con le API. Mi sono occupato della manutenzione e documentazione di una libreria condivisa di componenti React, rendendola accessibile tramite Storybook ai team utilizzatori. Ho implementato test con Testing Library e test end-to-end con Cucumber e Playwright. Ho monitorato i deploy con New Relic e analizzato le metriche delle performance con Datadog.",
+    "meli-jr": "Partecipazione a progetti legacy utilizzando tecnologie come Backbone.js, Handlebars e Marionette.js. Debugging con Kibana. Sviluppo di nuove funzionalità con React. Styling delle interfacce con Sass."
+  },
+  "projects": {
+    "title": "I miei progetti",
+    "text": "Ecco alcuni dei progetti a cui ho lavorato."
+  },
+  "contact": {
+    "title": "Dì ciao",
+    "text": "Hai una domanda, una proposta o vuoi semplicemente salutare? Puoi scrivermi una mail da qui.",
+    "email": "Email",
+    "affair": "Oggetto",
+    "message": "Messaggio",
+    "sending": "Invio in corso...",
+    "send": "Invia messaggio",
+    "success": "Messaggio inviato con successo!",
+    "error": "Si è verificato un errore durante l'invio del messaggio. Riprova, per favore.",
+    "placeholder-email": "example@mail.com",
+    "placeholder-affair": "Centrare un div.",
+    "placeholder-message": "Ho bisogno di aiuto per centrare un div, non ci riesco."
+  },
+  "error": {
+    "message": "Ops, qualcosa è andato storto. Riprova più tardi.",
+    "button": "Torna alla home"
+  }
+}

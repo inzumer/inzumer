@@ -7,7 +7,8 @@ export { default as LinkedIn } from './LinkedIn';
 export { default as Link } from './Link';
 export { default as Location } from './Location';
 export { default as Meli } from './Meli';
-export { default as Upwork } from './Upwork';
+export { default as Free } from './Free';
+export { default as Error } from './Error';
 
 /** Stack  */
 export { default as CSS } from './CSS';

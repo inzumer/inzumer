@@ -1,7 +1,7 @@
 'use client';
 
 /** Resources */
-import { Button, Input,  RichText, StatusMessage } from '@components';
+import { Button, Input, RichText, StatusMessage } from '@components';
 import { useTranslation } from 'react-i18next';
 import { useContactForm } from '@hooks';
 
@@ -48,11 +48,9 @@ const Contact = () => {
       <StatusMessage type='success' message={t('contact.success')} isActive={status === 'success'} />
       <StatusMessage type='error' message={t('contact.error')} isActive={status === 'error'} />
 
-      <div className={styles.form__container_button}>
-        <Button id='button-form-email' type='submit' disabled={status === 'sending'} className={styles.form__button} >
-          <RichText id='button-form-email-text' variant='s3' text={status === 'sending' ? t('contact.sending') : t('contact.send')} />
-        </Button>
-      </div>
+      <Button id='button-form-email' type='submit' disabled={status === 'sending'} className={styles.form__button} >
+        <RichText id='button-form-email-text' variant='p2' text={status === 'sending' ? t('contact.sending') : t('contact.send')} bold />
+      </Button>
     </form>
   );
 };

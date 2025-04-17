@@ -1,9 +1,10 @@
 /** Resources */
 import { RichText } from '@components';
-import { FormStatus } from '@types';
 
 /** Styles */
 import styles from './styles.module.css';
+
+type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 interface StatusMessageProps {
   type: FormStatus;
