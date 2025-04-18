@@ -30,7 +30,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: var(--primary-dark);
+  background-color: var(--primary);
 }
 
 /* Colors */
