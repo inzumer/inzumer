@@ -39,7 +39,7 @@ const Question: React.FC <QuestionProps> = ({ id, title, date, location, link, u
       </div>
 
       <div className={`${styles.question__content} ${isOpen && styles.question__content_open}`}>
-        { !isDesktop && <Icon name={icon} height={80} width={80} className={styles.question__icon_experience} /> }
+        { !isDesktop && <Icon name={icon} height={60} width={80} className={styles.question__icon_experience} /> }
 
         <div className={styles.question__description_header}>
           <div className={styles.question__description_location}>

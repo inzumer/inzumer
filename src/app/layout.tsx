@@ -1,5 +1,6 @@
 /** Resources */
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next';
 import { Roboto_Mono } from 'next/font/google';
 import { Footer, Menu, I18nLayout } from '@components';
 import { DESCRIPTION, NAME, TWITTER } from '@constants';
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Menu />
           <main id='main' data-testid='main'>
             {children}
+            <Analytics />
           </main>
           <Footer />
         </I18nLayout>

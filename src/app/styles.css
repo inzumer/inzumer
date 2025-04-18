@@ -30,7 +30,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: var(--primary-dark);
+  background-color: var(--primary);
 }
 
 /* Colors */
@@ -53,7 +53,7 @@ html {
   /* Primary (Violet) */
   --primary-light: #A56DFF;
   --primary: #7A00FF;
-  --primary-dark: #5300DA;
+  --primary-dark: #402972;
 
   /* Secondary (Navy Blue) */
   --secondary-light: #4F6CD8;
