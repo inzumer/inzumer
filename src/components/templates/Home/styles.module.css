@@ -23,6 +23,8 @@
 .presentation__emoji {
   /* 3. Typography */
   font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .presentation__emoji {
@@ -81,13 +83,14 @@
 
   /* 4. Visuals */
   border-radius: var(--space-32);
-  background-color: var(--secondary-light);
-  animation: background-color .5s ease;
+  background-color: var(--secondary);
+  animation: background-color .9s ease;
+  box-shadow: 5px 8px 113px -7px rgba(79, 108, 216, 1);
 }
 
 .presentation__button:hover {
   /* 4. Visuals */
-  background-color: var(--primary);
+  background-color: var(--secondary-light);
 }
 
 .section {
@@ -179,6 +182,12 @@
 }
 
 @media (min-width: 768px) {
+  .presentation__title,
+  .presentation__emoji {
+    /* 3. Typography */
+    font-size: 4.8rem;
+  }
+
   .section__card_container {
     /* 1. Positioning */
     justify-content: flex-start;

@@ -47,7 +47,7 @@
   text-transform: uppercase;
 
   /* 4. Visuals */
-  background-color: var(--secondary-light);
+  background-color: var(--secondary);
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -60,5 +60,5 @@
 
 .error__button_text:hover {
   /* 4. Visuals */
-  background-color: var(--secondary);
+  background-color: var(--secondary-light);
 }
