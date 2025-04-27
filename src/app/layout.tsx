@@ -17,6 +17,7 @@ const robotoMono = Roboto_Mono({
 
 /** Metadata */
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.inzumer.com'),
   title: `${NAME}`,
   description: `${DESCRIPTION}`,
   icons: {

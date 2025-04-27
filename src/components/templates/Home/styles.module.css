@@ -14,9 +14,19 @@
 .presentation__container {
   /* 1. Positioning */
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   /* 2. Box model */
   max-width: var(--breakpoint-lg);
+}
+
+.presentation__image {
+  /* 2. Box model */
+  height: auto;
+  width: 100%;
+  max-width: var(--breakpoint-md);
 }
 
 .presentation__title,
@@ -25,6 +35,7 @@
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: bold;
+  text-align: center;
 }
 
 .presentation__emoji {
@@ -104,6 +115,7 @@
   margin-bottom: var(--space-32);
 
   /* 3. Typography */
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
 }
 
@@ -119,6 +131,37 @@
   margin-bottom: var(--space-32);
 }
 
+.section__links_container {
+  /* 1. Positioning */
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+
+  /* 2. Box model */
+  margin-top: var(--space-48);
+  margin-bottom: var(--space-48);
+}
+
+.section__links {
+  /* 2. Box model */
+  padding: var(--space-16);
+  width: fit-content;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--space-8);
+
+  /* 2. Box model */
+  text-transform: uppercase;
+  color: var(--white-light);
+
+  /* 4.Visuals */
+  transition: color 0.3s ease;
+}
+
+.section__links:hover {
+  /* 3. Typography */
+  color: var(--gray);
+}
+
 .section__card {
   /* 2. Box model */
   max-width: var(--space-480);
@@ -128,8 +171,7 @@
   /* 1. Positioning */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-24);
+  gap: var(--space-16);
 
   /* 2. Box model */
   margin-top: var(--space-48);
@@ -141,10 +183,10 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, auto);
   grid-template-areas:
-    "github . . ."
-    "sass   jest    .      ."
-    "next   react   tailwind ."
-    "ts     js      html   css";
+    'github . . .'
+    'sass   jest    .      .'
+    'next   react   tailwind .'
+    'ts     js      html   css';
   gap: var(--space-8);
 
   /* 2. Box model */
@@ -181,11 +223,70 @@
   color: var(--primary-light);
 }
 
+.section__container_recommendations {
+  /* 2. Box model */
+  padding-top: var(--space-112);
+}
+
+.section__recommendation {
+  /* 2. Box model */
+  margin-top: var(--space-48);
+}
+
+.section__text_container {
+  /* 2. Box model */
+  padding: var(--space-48) var(--space-32) var(--space-32) var(--space-32);
+}
+
+.section__recommendation_container {
+  /* 1. Positioning */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+
+  /* 2. Box model */
+  padding: var(--space-32);
+}
+
+.section__recommendation_container_one {
+  /* 1. Positioning */
+  grid-area: carlos;
+
+  /* 4. Visuals */
+  background-color: var(--primary);
+}
+
+.section__recommendation_container_two {
+  /* 1. Positioning */
+  grid-area: estefany;
+
+  /* 4. Visuals */
+  background-color: var(--secondary);
+}
+
+.section__recommendation_container_three {
+  /* 1. Positioning */
+  grid-area: juliana;
+
+  /* 4. Visuals */
+  background-color: var(--primary-light);
+}
+
 @media (min-width: 768px) {
+  .presentation__image {
+    /* 4. Visuals */
+    filter: opacity(0.5);
+  }
+
+  .presentation__title {
+    /* 1. Positioning */
+    position: absolute;
+  }
+
   .presentation__title,
   .presentation__emoji {
     /* 3. Typography */
-    font-size: 4.8rem;
+    font-size: 8rem;
   }
 
   .section__card_container {
@@ -196,5 +297,39 @@
   .section__icons {
     /* 2. Box model */
     padding: var(--space-16);
+  }
+
+  .section__title {
+    /* 3. Typography */
+    font-size: 4rem;
+  }
+}
+
+@media (min-width:1024px) {
+  .section__container_recommendations {
+    /* 2. Box model */
+    margin: auto;
+    max-width: var(--breakpoint-lg);
+    margin-bottom: var(--space-32);
+  }
+
+  .section__recommendation {
+    /* 1. Positioning */
+    display: flex;
+    gap: var(--space-16);
+
+    /* 2. Box model */
+    margin-bottom: var(--space-120);
+  }
+
+  .section__text_container {
+    /* 2. Box model */
+    padding: 0;
+  }
+
+  .section__recommendation_container {
+    /* 2. Box model */
+    padding: var(--space-32);
+    width: var(--breakpoint-md);
   }
 }

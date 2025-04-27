@@ -41,9 +41,9 @@ const Footer: React.FC = () => {
                   key={lng}
                   id={lng}
                   event={() => changeLanguage(lng)}
-                  className={`${styles.footer__button} ${i18n.language === lng && styles.footer__button_active}`}
+                  className={`${styles.footer__button} ${i18n.language.includes(lng) && styles.footer__button_active}`}
                 >
-                  <RichText id='footer-about-title' variant='s4' text={lng.toUpperCase()} className={`${styles.footer__text} ${i18n.language === lng && styles.footer__button_active}`} />
+                  <RichText id='footer-about-title' variant='s4' text={lng.toUpperCase()} className={`${styles.footer__text} ${i18n.language.includes(lng) && styles.footer__button_active}`} />
                 </Button>
               ))}
             </div>

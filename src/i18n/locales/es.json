@@ -1,10 +1,12 @@
 {
   "header": {
+    "home": "Inicio",
     "about": "Sobre mí",
     "work": "Trabajo",
     "experience": "Experiencia",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "recommendations": "Recomendaciones"
   },
   "footer": {
     "about": "Sobre mí",
@@ -52,8 +54,35 @@
     "placeholder-affair": "Centrar un div.",
     "placeholder-message": "Necesito ayuda con un div, no puedo centrarlo."
   },
+  "recommendations": {
+    "title": "Recomendaciones",
+    "description": "Aquí algunas recomendaciones de colegas y clientes.",
+    "carlos-vizcaya": "Muchas veces impulsó al equipo con una actitud muy proactiva, ayudando a que todos estuviéramos alineados y cumpliéramos con los objetivos a tiempo. Es de esas personas que no solo cumplen con lo que se espera de ellas, sino que además están siempre dispuestas a dar una mano, resolver bloqueos y aportar buena energía al grupo. Trabajar con él fue realmente un placer, y sin dudas sumaría muchísimo valor a cualquier equipo.",
+    "juliana-gonzalez": "Tiene sólidos conocimientos en desarrollo frontend, especialmente en tecnologías como React, manejo de estilos y Node.js. Además, es muy ágil, analítico, organizado y comunica sus ideas de forma clara y efectiva, lo cual hace que trabajar con él sea siempre fluido y enriquecedor. Nahuel también aporta un valor diferencial: tiene una mirada amplia del producto y del usuario, lo que eleva la calidad de las soluciones que desarrolla y potencia al equipo entero.",
+    "estefany-campos": "Lo que más admiro de Nahuel es su capacidad para ver los desafíos como oportunidades de crecimiento. Siempre aborda cada tarea con una actitud positiva y proactiva, lo que no solo lo convierte en un activo valioso para cualquier proyecto, sino que también inspira a quienes lo rodean."
+  },
   "error": {
     "message": "Ups, algo salió mal. Por favor, intentá de nuevo más tarde.",
     "button": "Volver al inicio"
+  },
+  "belo": {
+    "description": "Rediseño y desarrollo del nuevo home y diversas páginas de belo.app, una aplicación web que ofrece una experiencia moderna. El proyecto se construyó utilizando TypeScript, Wouter, Next.js y Tailwind CSS, la implementación de traducciones a 3 idiomas mediante i18n, priorizando una interfaz de usuario atractiva, un rendimiento óptimo."
+  },
+  "payments": {
+    "description-one": "Participé activamente en la migración del sistema de pagos del checkout de Mercado Libre hacia las evoluciones V2 y V2.1. Este proceso crítico habilitó la combinación fluida de múltiples métodos de pago y la integración de descuentos inteligentes, modernizando la arquitectura para asegurar su escalabilidad y la adopción de tecnologías de vanguardia.",
+    "description-two": "Implementación de Observabilidad",
+    "description-three": "Adicionalmente, un componente clave de esta transformación fue la implementación integral de observabilidad. Incorporamos New Relic, Datadog y Kibana para obtener una visibilidad profunda del sistema. En Datadog, implementamos un semafoo para la medición y el control del tráfico en tiempo real.",
+    "description-four": "Optimización del Monitoreo y Debugging",
+    "description-five": "Mejoramos significativamente el loggeo en Kibana, facilitando el debugging y la identificación de problemas. En New Relic, implementamos un sistema de loggeo enriquecido diseñado específicamente para medir el performance de las transacciones y obtener insights detallados del comportamiento del sistema.",
+    "description-six": "Impacto en la Robustez y el Acceso",
+    "description-seven": "Estas mejoras en la observabilidad, junto con las actualizaciones de la arquitectura y las nuevas funcionalidades 'invisibles' para el usuario, fueron fundamentales para la robustez y el futuro del checkout on. Además, habilitamos nuevas funcionalidades que expandieron el acceso al comercio electrónico para un mayor número de personas."
+  },
+  "smartcoupons": {
+    "description": "Implementamos 'Smart Coupons' en el checkout de Mercado Libre para optimizar la aplicación de descuentos y cupones. Este proyecto tuvo la complejidad de gestionar múltiples promociones, ofreciendo a los usuarios una experiencia más intuitiva y eficiente al momento de aplicar sus beneficios."
+  },
+  "regression": {
+    "description-one": "Este proyecto consistió en la creación de regresiones automáticas integral para el checkout de Mercado Libre. Automatizamos la prueba de más de 100 casos de uso end-to-end, abarcando los flujos críticos del proceso de compra, combinaciones de medios de pago y combinaciones de descuentos.",
+    "description-two": "La solución se construyó utilizando Playwright para la automatización de la interacción del usuario y Cucumber para la definición colaborativa y la ejecución de los escenarios de prueba en un formato comprensible para equipos técnicos y no técnicos.",
+    "description-three": "De esta forma reducimos considerablemente la cantidad de bugs al implementar nuevas features y en las releases semanales del checkout."
   }
 }
