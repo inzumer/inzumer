@@ -10,6 +10,7 @@ interface ImageProps {
   className?: string;
   priority?: boolean;
   lazy?: boolean;
+  styles?: React.CSSProperties;
 }
 
 const Image: React.FC<ImageProps> = ({
@@ -20,6 +21,7 @@ const Image: React.FC<ImageProps> = ({
   className = '',
   priority = false,
   lazy = true,
+  styles,
 }) => {
   const imageSrc = Images[src];
 
@@ -29,6 +31,7 @@ const Image: React.FC<ImageProps> = ({
       alt={alt}
       width={width}
       height={height}
+      style={styles || undefined}
       className={className}
       priority={priority}
       loading={lazy ? 'lazy' : 'eager'}

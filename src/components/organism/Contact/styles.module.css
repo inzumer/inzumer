@@ -30,5 +30,5 @@
 
 .form__button:hover {
   /* 4.Visuals */
-  background-color: var(--secondary-light);
+  background-color: var(--secondary-dark);
 }

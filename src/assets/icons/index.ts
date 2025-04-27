@@ -9,6 +9,8 @@ export { default as Location } from './Location';
 export { default as Meli } from './Meli';
 export { default as Free } from './Free';
 export { default as Error } from './Error';
+export { default as Gamora } from './Gamora';
+export { default as Quotes } from './Quotes';
 
 /** Stack  */
 export { default as CSS } from './CSS';
