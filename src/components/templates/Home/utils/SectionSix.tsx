@@ -1,7 +1,6 @@
 /** Resources */
-import { Contact, Navigate, RichText } from '@components';
+import { Icon, RichText } from '@components';
 import { useTranslation } from 'react-i18next';
-import { SOCIAL } from '@constants';
 
 /** Styles */
 import styles from '../styles.module.css';
@@ -10,22 +9,34 @@ const SectionSix: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section id='contact' className={styles.section}>
-      <div className={styles.section__container}>
-        <RichText id='footer-social-title' variant='p1' text={t('footer.social')} className={styles.section__title} bold />
-        <div className={styles.section__links}>
-          {SOCIAL.map((item, index) => (
-            <Navigate id={`footer-social-link-${index}`} href={item.url} key={index} className={styles.section__links} external>
-              <RichText id='footer-social-title' variant='s3' text={item.name} className={styles.section__text} />
-            </Navigate>
-          ))}
+    <section id='recommendations' >
+      <div className={styles.section__container_recommendations}>
+        <div className={styles.section__text_container}>
+          <RichText id='recommendations-title' variant='p1' text={t('recommendations.title')} className={styles.section__title} bold />
+          <RichText id='recommendations-description' variant='p3' text={t('recommendations.description')} className={styles.section__description} />
         </div>
-      </div>
-      <div className={styles.section__container}>
-        <RichText id='contact-title' variant='p1' text={t('contact.title')} className={styles.section__title} bold />
-        <RichText id='contact-description' variant='p3' text={t('contact.text')} className={styles.section__description} />
-        <div className={styles.section__card_container}>
-          <Contact />
+
+        <div className={styles.section__recommendation}>
+          <div className={`${styles.section__recommendation_container} ${styles.section__recommendation_container_one}`}>
+            <Icon name='Quotes' width={56} height={56} />
+            <RichText id='carlos-vizcaya-description' variant='s4' text={t('recommendations.carlos-vizcaya')} className={styles.section__description} />
+            <RichText id='carlos-vizcaya-author' variant='s4' text='- Carlos Vizcaya' bold />
+            <RichText id='carlos-vizcaya-position' variant='s4' text='Project Leader' />
+          </div>
+
+          <div className={`${styles.section__recommendation_container} ${styles.section__recommendation_container_two}`}>
+            <Icon name='Quotes' width={56} height={56} />
+            <RichText id='estefany-campos-description' variant='s4' text={t('recommendations.estefany-campos')} className={styles.section__description} />
+            <RichText id='estefany-campos-author' variant='s4' text='- Estefany Campos' bold />
+            <RichText id='estefany-campos-position' variant='s4' text='Software Engineer' />
+          </div>
+
+          <div className={`${styles.section__recommendation_container} ${styles.section__recommendation_container_three}`}>
+            <Icon name='Quotes' width={56} height={56} />
+            <RichText id='juliana-gonzalez-description' variant='s4' text={t('recommendations.juliana-gonzalez')} className={styles.section__description} />
+            <RichText id='juliana-gonzalez-author' variant='s4' text='- Juliana Gonzalez' bold />
+            <RichText id='juliana-gonzalez-position' variant='s4' text='Software Engineer' />
+          </div>
         </div>
       </div>
     </section>

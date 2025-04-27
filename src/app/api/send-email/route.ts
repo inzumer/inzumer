@@ -13,7 +13,6 @@ export async function POST(request: NextRequest) {
     const data = await service.sendEmail(from, subject, message);
 
     return NextResponse.json({ success: true, data });
-
   } catch (err: unknown) {
     const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
 

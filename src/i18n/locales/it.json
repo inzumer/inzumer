@@ -1,10 +1,12 @@
 {
   "header": {
+    "home": "Home",
     "about": "Chi sono",
     "work": "Lavoro",
     "experience": "Esperienza",
     "projects": "Progetti",
-    "contact": "Contatto"
+    "contact": "Contatto",
+    "recommendations": "Raccomandazioni"
   },
   "footer": {
     "about": "Chi sono",
@@ -52,8 +54,35 @@
     "placeholder-affair": "Centrare un div.",
     "placeholder-message": "Ho bisogno di aiuto per centrare un div, non ci riesco."
   },
+  "recommendations": {
+    "title": "Raccomandazioni",
+    "description": "Ecco alcune raccomandazioni da parte di colleghi e clienti.",
+    "carlos-vizcaya": "Molte volte ha spinto il team in avanti con un atteggiamento molto proattivo, aiutando tutti a rimanere allineati e a raggiungere gli obiettivi nei tempi previsti. È una di quelle persone che non solo soddisfano le aspettative, ma sono anche sempre pronte a dare una mano, risolvere blocchi e portare energia positiva al gruppo. Lavorare con lui è stato davvero un piacere, e senza dubbio apporterebbe un enorme valore a qualsiasi team.",
+    "juliana-gonzalez": "Ha una solida conoscenza nello sviluppo frontend, in particolare in tecnologie come React, gestione degli stili e Node.js. Inoltre, è molto agile, analitico, organizzato e comunica le sue idee in modo chiaro ed efficace, rendendo il lavoro con lui sempre fluido ed arricchente. Nahuel apporta anche un valore differenziale: ha una visione ampia sia del prodotto che dell'utente, il che eleva la qualità delle soluzioni che sviluppa e valorizza l'intero team.",
+    "estefany-campos": "Quello che ammiro di più di Nahuel è la sua capacità di vedere le sfide come opportunità di crescita. Affronta sempre ogni compito con un atteggiamento positivo e proattivo, il che lo rende non solo una risorsa preziosa per qualsiasi progetto, ma anche una fonte di ispirazione per chi lo circonda."
+  },
   "error": {
     "message": "Ops, qualcosa è andato storto. Riprova più tardi.",
     "button": "Torna alla home"
+  },
+  "belo": {
+    "description": "Redesign e sviluppo della nuova homepage e di varie pagine di belo.app, un'applicazione web che offre un'esperienza moderna. Il progetto è stato realizzato utilizzando TypeScript, Wouter, Next.js e Tailwind CSS, con l'implementazione delle traduzioni in 3 lingue tramite i18n, dando priorità a un'interfaccia utente accattivante e a prestazioni ottimali."
+  },
+  "payments": {
+    "description-one": "Ho partecipato attivamente alla migrazione del sistema di pagamenti del checkout di Mercado Libre verso le versioni V2 e V2.1. Questo processo critico ha permesso la combinazione fluida di molteplici metodi di pagamento e l'integrazione di sconti intelligenti, modernizzando l'architettura per garantirne la scalabilità e l'adozione di tecnologie all'avanguardia.",
+    "description-two": "Implementazione dell'Osservabilità",
+    "description-three": "Inoltre, un elemento chiave di questa trasformazione è stata l'implementazione completa dell'osservabilità. Abbiamo integrato New Relic, Datadog e Kibana per ottenere una visibilità profonda del sistema. In Datadog, abbiamo implementato un sistema a semaforo per la misurazione e il controllo del traffico in tempo reale.",
+    "description-four": "Ottimizzazione del Monitoraggio e del Debugging",
+    "description-five": "Abbiamo migliorato significativamente il sistema di log su Kibana, facilitando il debugging e l'identificazione dei problemi. Su New Relic, abbiamo implementato un sistema di log arricchito progettato specificamente per misurare le performance delle transazioni e ottenere approfondimenti dettagliati sul comportamento del sistema.",
+    "description-six": "Impatto sulla Robustezza e sull'Accessibilità",
+    "description-seven": "Questi miglioramenti nell'osservabilità, insieme agli aggiornamenti architetturali e alle nuove funzionalità 'invisibili' per l'utente, sono stati fondamentali per la robustezza e il futuro del checkout on. Inoltre, abbiamo abilitato nuove funzionalità che hanno ampliato l'accesso all'e-commerce a un numero maggiore di persone."
+  },
+  "smartcoupons": {
+    "description": "Abbiamo implementato i 'Smart Coupons' nel checkout di Mercado Libre per ottimizzare l'applicazione di sconti e coupon. Questo progetto ha comportato la complessità di gestire più promozioni, offrendo agli utenti un'esperienza più intuitiva ed efficiente nell'applicazione dei loro vantaggi."
+  },
+  "regression": {
+    "description-one": "Questo progetto ha riguardato la creazione di regressioni automatiche complete per il checkout di Mercado Libre. Abbiamo automatizzato il testing di oltre 100 casi d'uso end-to-end, coprendo i flussi critici del processo di acquisto, le combinazioni di metodi di pagamento e le combinazioni di sconti.",
+    "description-two": "La soluzione è stata realizzata utilizzando Playwright per l'automazione delle interazioni dell'utente e Cucumber per la definizione collaborativa e l'esecuzione degli scenari di test in un formato comprensibile sia ai team tecnici che a quelli non tecnici.",
+    "description-three": "In questo modo abbiamo ridotto significativamente il numero di bug durante l'implementazione di nuove funzionalità e nei rilasci settimanali del checkout."
   }
 }

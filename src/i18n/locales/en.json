@@ -1,10 +1,12 @@
 {
   "header": {
+    "home": "Home",
     "about": "About",
     "work": "Work",
     "experience": "Experience",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "recommendations": "Recommendations"
   },
   "footer": {
     "about": "About Me",
@@ -52,8 +54,35 @@
     "placeholder-affair": "Center a div.",
     "placeholder-message": "I need help centering a div, I just can't get it right."
   },
+  "recommendations": {
+    "title": "Recommendations",
+    "description": "Here are some recommendations from colleagues and clients.",
+    "carlos-vizcaya": "Many times, he drove the team forward with a very proactive attitude, helping everyone stay aligned and meet our goals on time. He is one of those people who not only fulfills what is expected of them but is also always willing to lend a hand, unblock issues, and bring positive energy to the group. Working with him was truly a pleasure, and he would undoubtedly add tremendous value to any team.",
+    "juliana-gonzalez": "He has solid knowledge in frontend development, especially in technologies like React, style management, and Node.js. In addition, he is very agile, analytical, organized, and communicates his ideas clearly and effectively, which makes working with him always smooth and enriching. Nahuel also brings a unique value: he has a broad perspective of both the product and the user, which elevates the quality of the solutions he develops and enhances the entire team.",
+    "estefany-campos": "What I admire most about Nahuel is his ability to see challenges as opportunities for growth. He always approaches each task with a positive and proactive attitude, which not only makes him a valuable asset to any project but also inspires those around him."
+  },
   "error": {
     "message": "Oops, something went wrong. Please try again later.",
     "button": "Back to home"
+  },
+  "belo": {
+    "description": "Redesign and development of the new homepage and several pages of belo.app, a web application offering a modern experience. The project was built using TypeScript, Wouter, Next.js, and Tailwind CSS, with the implementation of translations into 3 languages via i18n, prioritizing an attractive user interface and optimal performance."
+  },
+  "payments": {
+    "description-one": "I actively participated in the migration of Mercado Libre's checkout payment system to versions V2 and V2.1. This critical process enabled the smooth combination of multiple payment methods and the integration of smart discounts, modernizing the architecture to ensure scalability and the adoption of cutting-edge technologies.",
+    "description-two": "Observability Implementation",
+    "description-three": "Additionally, a key component of this transformation was the comprehensive implementation of observability. We incorporated New Relic, Datadog, and Kibana to gain deep system visibility. In Datadog, we implemented a traffic light system for real-time traffic measurement and control.",
+    "description-four": "Monitoring and Debugging Optimization",
+    "description-five": "We significantly improved logging in Kibana, making debugging and problem identification easier. In New Relic, we implemented an enriched logging system specifically designed to measure transaction performance and obtain detailed system behavior insights.",
+    "description-six": "Impact on Robustness and Accessibility",
+    "description-seven": "These improvements in observability, together with architecture updates and new 'invisible' functionalities for the user, were fundamental to the robustness and future of checkout on. Additionally, we enabled new features that expanded access to e-commerce for a larger number of people."
+  },
+  "smartcoupons": {
+    "description": "We implemented 'Smart Coupons' in the Mercado Libre checkout to optimize the application of discounts and coupons. This project involved the complexity of managing multiple promotions, offering users a more intuitive and efficient experience when applying their benefits."
+  },
+  "regression": {
+    "description-one": "This project involved the creation of comprehensive automated regressions for Mercado Libre's checkout. We automated the testing of over 100 end-to-end use cases, covering critical purchase process flows, combinations of payment methods, and discount combinations.",
+    "description-two": "The solution was built using Playwright for automating user interactions and Cucumber for the collaborative definition and execution of test scenarios in a format understandable by both technical and non-technical teams.",
+    "description-three": "In this way, we significantly reduced the number of bugs when implementing new features and during the weekly checkout releases."
   }
 }

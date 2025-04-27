@@ -1,5 +1,5 @@
 /** Resources */
-import { Card, RichText } from '@components';
+import { Contact, RichText } from '@components';
 import { useTranslation } from 'react-i18next';
 
 /** Styles */
@@ -9,12 +9,12 @@ const SectionFive: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section id='projects' className={styles.section}>
+    <section id='contact' className={styles.section}>
       <div className={styles.section__container}>
-        <RichText id='projects-title' variant='p1' text={t('projects.title')} className={styles.section__title} bold />
-        <RichText id='projects-description' variant='s3' text={t('projects.text')} />
+        <RichText id='contact-title' variant='p1' text={t('contact.title')} className={styles.section__title} bold />
+        <RichText id='contact-description' variant='p3' text={t('contact.text')} className={styles.section__description} />
         <div className={styles.section__card_container}>
-          <Card id='marvel-comics-library' title='Marvel Library - Next.js' url='https://comics-library-marvel-app.vercel.app/' src='Marvel' />
+          <Contact />
         </div>
       </div>
     </section>

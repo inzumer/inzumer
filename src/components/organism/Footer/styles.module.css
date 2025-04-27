@@ -61,7 +61,7 @@
 .footer__button:hover > .footer__text, 
 .footer__button_active > .footer__text {
   /* 3. Typography */
-  color: var(--primary-light);
+  color: var(--primary);
 }
 
 .footer__copyright {

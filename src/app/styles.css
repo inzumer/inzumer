@@ -51,14 +51,18 @@ html {
   --black-dark: #151515;
   
   /* Primary (Violet) */
-  --primary-light: #A56DFF;
-  --primary: #7A00FF;
-  --primary-dark: #402972;
+  --primary-lightest: #F72585;
+  --primary-light: #B5179E;
+  --primary: #7209B7;
+  --primary-dark: #560BAD;
+  --primary-darker: #480CA8;
 
   /* Secondary (Navy Blue) */
-  --secondary-light: #4F6CD8;
-  --secondary: #3a4fb4;
-  --secondary-dark: #1B265F;
+  --secondary-lightest: #4CC9F0;
+  --secondary-light: #4895EF;
+  --secondary: #4361EE;
+  --secondary-dark: #3F37C9;
+  --secondary-darker: #3A0CA3;
 }
 
 
