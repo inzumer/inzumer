@@ -52,7 +52,7 @@
 
 .regression__disclaimer_link:hover {
   /* 3. Typography */
-  color: var(--primary-light);
+  color: var(--gray-dark);
 }
 
 .regression__description {
@@ -123,39 +123,18 @@
   /* 2. Box model */
   padding: var(--space-16);
   width: fit-content;
-  border: 1px solid var(--gray-light);
   border-radius: var(--space-8);
 
   /* 2. Box model */
   text-transform: uppercase;
   color: var(--white-light);
-
+  background-color: var(--black-light);
+  
   /* 4.Visuals */
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .regression__button_text:hover {
-  /* 3. Typography */
-  color: var(--gray);
-}
-
-@media (min-width: 768px) {
-  .regression__img_container {
-    /* 1.Positioning */
-    display: grid;
-    gap: var(--space-8);
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      'SM1 SM2 SM3'
-      'SM4 . .';
-  
-    /* 2. Box model */
-    width: fit-content;
-  }
-
-  .regression__img:hover {
-    /* 4.Visuals */
-    transform: scale(1.5);
-  }
+  /* 2. Box model */
+  background-color: var(--gray-dark);
 }

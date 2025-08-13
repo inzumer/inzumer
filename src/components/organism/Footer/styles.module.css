@@ -3,7 +3,7 @@
   padding: var(--space-32);
 
   /* 4. Visuals */
-  background-color: var(--black);
+  background-color: var(--black-dark);
   border-top: 1px solid var(--black-light);
 }
 

@@ -14,8 +14,9 @@
 
 html, body {
   font-optical-sizing: auto;
+  line-height: 1.6;
   color: var(--white-light);
-  background-color: var(--black);
+  background-color: var(--black-dark);
 }
 
 html {
@@ -25,12 +26,12 @@ html {
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: var(--black-light);
+  background-color: var(--black-dark);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: var(--primary);
+  background-color: var(--black-light);
 }
 
 /* Colors */
@@ -69,6 +70,7 @@ html {
 /* Spaces */
 :root {
   --space-8: 8px;
+  --space-12: 12px;
   --space-16: 16px;
   --space-24: 24px;
   --space-32: 32px;

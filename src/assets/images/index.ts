@@ -1,7 +1,3 @@
-
-/** Illustration */
-export { default as GamoraPresentation } from './gamora-presentation.svg';
-
 /** Mockups */
 export { default as Belo } from './belo.png';
 export { default as Payments } from './payments-meli.png';

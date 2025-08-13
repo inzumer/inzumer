@@ -1,3 +1,5 @@
+'use client';
+
 /** Resources */
 import { Contact, RichText } from '@components';
 import { useTranslation } from 'react-i18next';
@@ -5,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 /** Styles */
 import styles from '../styles.module.css';
 
-const SectionFive: React.FC = () => {
+const ContactMe: React.FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -21,6 +23,6 @@ const SectionFive: React.FC = () => {
   );
 };
 
-SectionFive.displayName = 'SectionFive';
+ContactMe.displayName = 'ContactMe';
 
-export default SectionFive;
+export default ContactMe;

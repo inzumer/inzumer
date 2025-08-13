@@ -29,55 +29,20 @@
   max-width: var(--breakpoint-md);
 }
 
-.presentation__title,
-.presentation__emoji {
+.presentation__title {
   /* 3. Typography */
-  font-size: 4rem;
+  font-size: 6rem;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
 }
 
-.presentation__emoji {
-  /* 1. Positioning */
-  display: inline-block;
-
+.presentation__subtitle {
   /* 2. Box model */
-  margin: 0 var(--space-16);
+  align-self: flex-end;
 
-  /* 4. Visuals */
-  animation: emoji-animation 2s ease-in-out infinite;
-  transform-origin: 70% 70%;
-}
-
-@keyframes emoji-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  15% {
-    transform: rotate(10deg);
-  }
-
-  30% {
-    transform: rotate(-10deg);
-  }
-
-  45% {
-    transform: rotate(8deg);
-  }
-
-  60% {
-    transform: rotate(-8deg);
-  }
-
-  75% {
-    transform: rotate(4deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+  /* 3. Typography */
+  text-align: end;
 }
 
 .presentation__button {
@@ -105,9 +70,13 @@
 }
 
 .section {
+  /* 1. Positioning */
+  display: flex;
+  justify-content: center;
+
   /* 2. Box model */
   width: 100%;
-  padding: var(--space-112) var(--space-32) var(--space-32) var(--space-32);
+  padding: var(--space-112) var(--space-16) var(--space-32) var(--space-16);
 }
 
 .section__title {
@@ -117,16 +86,20 @@
   /* 3. Typography */
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .section__description {
-  /* 2. Box model */
-  max-width: var(--space-480);
+  /* 1. Positioning */
+  display: flex;
+  justify-content: center;
+
+  /* 3. Typography */
+  text-align: center;
 }
 
 .section__container {
   /* 2. Box model */
-  margin: auto;
   max-width: var(--breakpoint-lg);
   margin-bottom: var(--space-32);
 }
@@ -163,34 +136,19 @@
 }
 
 .section__card {
-  /* 2. Box model */
-  max-width: var(--space-480);
+  /* 3. Typography */
+  text-align: center;
 }
 
 .section__card_container {
   /* 1. Positioning */
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: var(--space-16);
 
   /* 2. Box model */
   margin-top: var(--space-48);
-}
-
-.section__container_icons {
-  /* 1. Positioning */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas:
-    'github . . .'
-    'sass   jest    .      .'
-    'next   react   tailwind .'
-    'ts     js      html   css';
-  gap: var(--space-8);
-
-  /* 2. Box model */
-  width: fit-content;
 }
 
 .section__icons {
@@ -238,98 +196,61 @@
   padding: var(--space-48) var(--space-32) var(--space-32) var(--space-32);
 }
 
-.section__recommendation_container {
+.section__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+}
+
+.section__skills_container {
   /* 1. Positioning */
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
 
   /* 2. Box model */
-  padding: var(--space-32);
+  padding: var(--space-24);
+  max-width: 48%;
+  border: .5px solid var(--black-light);
+  border-radius: var(--space-8);
 }
 
-.section__recommendation_container_one {
-  /* 1. Positioning */
-  grid-area: carlos;
-
-  /* 4. Visuals */
-  background-color: var(--primary);
-}
-
-.section__recommendation_container_two {
-  /* 1. Positioning */
-  grid-area: estefany;
-
-  /* 4. Visuals */
-  background-color: var(--secondary);
-}
-
-.section__recommendation_container_three {
-  /* 1. Positioning */
-  grid-area: juliana;
-
-  /* 4. Visuals */
-  background-color: var(--primary-light);
+.section__skills_title {
+  /* 3. Typography */
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-  .presentation__image {
-    /* 4. Visuals */
-    filter: opacity(0.5);
-  }
-
   .presentation__title {
-    /* 1. Positioning */
-    position: absolute;
+    /* 3. Typography */
+    font-size: 16rem !important;
   }
 
-  .presentation__title,
-  .presentation__emoji {
-    /* 3. Typography */
-    font-size: 8rem;
+  .section {
+    /* 2. Box model */
+    padding: var(--space-112) var(--space-32) var(--space-32) var(--space-32);
   }
 
   .section__card_container {
     /* 1. Positioning */
-    justify-content: flex-start;
-  }
-
-  .section__icons {
-    /* 2. Box model */
-    padding: var(--space-16);
+    justify-content: center;
   }
 
   .section__title {
     /* 3. Typography */
     font-size: 4rem;
   }
+
+  .section__card_container__projects {
+    /* 1. Positioning */
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width:1024px) {
-  .section__container_recommendations {
-    /* 2. Box model */
-    margin: auto;
-    max-width: var(--breakpoint-lg);
-    margin-bottom: var(--space-32);
-  }
-
-  .section__recommendation {
-    /* 1. Positioning */
-    display: flex;
-    gap: var(--space-16);
-
-    /* 2. Box model */
-    margin-bottom: var(--space-120);
-  }
-
   .section__text_container {
     /* 2. Box model */
     padding: 0;
-  }
-
-  .section__recommendation_container {
-    /* 2. Box model */
-    padding: var(--space-32);
-    width: var(--breakpoint-md);
   }
 }

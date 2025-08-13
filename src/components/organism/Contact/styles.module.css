@@ -24,11 +24,11 @@
   text-transform: uppercase;
 
   /* 4.Visuals */
-  background-color: var(--secondary);
+  background-color: var(--black-light);
   transition: background-color .3s ease;
 }
 
 .form__button:hover {
   /* 4.Visuals */
-  background-color: var(--secondary-dark);
+  background-color: var(--gray-dark);
 }
