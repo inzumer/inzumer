@@ -1,6 +1,6 @@
 /** Resources */
-import { Image } from '@components';
 import { useTranslation } from 'react-i18next';
+import { RichText } from '@components';
 
 /** Styles */
 import styles from '../styles.module.css';
@@ -11,11 +11,8 @@ const Presentation: React.FC = () => {
   return (
     <section id='presentation' className={styles.presentation}>
       <div className={styles.presentation__container}>
-        <Image src='GamoraPresentation' alt='Gamora' className={styles.presentation__image} />
-        <h1 id='presentation-title' className={styles.presentation__title}>{t('presentation.title-one')}
-          <span id='presentation-emoji' className={styles.presentation__emoji}> 👋 </span>
-          {t('presentation.title-two')}
-        </h1>
+        <RichText id='presentation-title' className={styles.presentation__title} variant='h1' text={t('presentation.title-one')} />
+        <RichText id='presentation-subtitle' className={styles.presentation__subtitle} variant='s4' text={t('presentation.title-two')} />
       </div>
     </section>
   );

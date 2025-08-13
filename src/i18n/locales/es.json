@@ -15,26 +15,27 @@
     "disclaimer": "Desarrollado por @inzumer — o Nahuel Zamuner, como prefieras."
   },
   "presentation": {
-    "title-one": "Hola",
-    "title-two": "soy Nahuel Zamuner"
+    "title-one": "INZUMER",
+    "title-two": "Software Developer @inzumer — o Nahuel Zamuner, como prefieras."
   },
   "about": {
     "title": "Sobre Mí",
-    "text-one": "Desarrollo y optimizo interfaces, priorizando que sean accesibles, rápidas y confiables. Cuento con más de 3 años de experiencia como ",
-    "text-two": ", participando activamente en la toma de decisiones técnicas y de producto desde el lado del frontend. Me enfoco en garantizar la performance, la estabilidad y la calidad en cada proyecto en el que participo. Me motiva mantenerme actualizado con las tecnologías del ecosistema frontend y asumir desafíos que impulsen mi crecimiento profesional."
+    "text-one": "Desarrollo y optimizo interfaces priorizando la accesibilidad y la fiabilidad. Cuento con más de 4 años de experiencia como ",
+    "text-two": ", participando activamente en la toma de decisiones técnicas y de producto desde la perspectiva del frontend y backend. Me enfoco en garantizar el rendimiento, la estabilidad y la calidad de cada producto en el que trabajo.",
+    "text-three": " Me motiva mantenerme actualizado con las últimas tecnologías y asumir desafíos que impulsen mi crecimiento profesional. Disfruto formar parte del desarrollo integral de los productos, acompañar su evolución y trabajar con una visión a largo plazo."
   },
   "skills": {
-    "title": "Skills Principales"
-  },
-  "work": {
-    "title": "Mi Trabajo",
-    "text": "Estas son algunas de las empresas en las que he contribuido."
-  },
-  "experience": {
-    "title": "Experiencia Profesional",
-    "freelancer": "Durante mi etapa como desarrollador frontend freelance, me enfoqué en crear aplicaciones web desde cero. Trabajé en estrecha colaboración con equipos de UX/UI, participando activamente en la definición de interfaces y flujos. En algunos proyectos también asumí el rol de 'diseñador', elaborando propuestas visuales desde la investigación hasta los wireframes finales. Esta experiencia me permitió desarrollar una mirada integral del producto, combinando diseño, desarrollo y usabilidad.",
-    "meli-ssr": "Desarrollo de servicios, middlewares y controladores para la integración con APIs. Mantenimiento y documentación de una librería de componentes en React.js, publicada a través de Storybook para su uso por parte de distintos equipos. Implementación de pruebas unitarias con Testing Library y pruebas end-to-end con Cucumber y Playwright. Seguimiento de despliegues con New Relic y análisis de métricas mediante Datadog.",
-    "meli-jr": "Participación en proyectos legacy utilizando tecnologías como Backbone.js, Handlebars y Marionette.js. Debugging con Kibana. Desarrollo de nuevas features con React. Estilado de interfaces con Sass."
+    "title": "En qué puedo ayudarte",
+    "title-one": "Construir webs",
+    "title-two": "Construir aplicaciones multiplataforma",
+    "title-three": "Optimizar y escalar tu plataforma existente",
+    "title-four": "Auditar tu código y arquitectura",
+    "title-five": "Integrar tecnologías y APIs",
+    "description-one": "Desde la idea hasta la implementación, creo sitios rápidos, accesibles y optimizados para que no pierdas clientes por tiempos de carga o errores de usabilidad.",
+    "description-two": "Una sola base de código para web, iOS y Android, reduciendo costes y tiempo de lanzamiento sin sacrificar calidad.",
+    "description-three": "Mejoro rendimiento, seguridad y estabilidad para que tu producto soporte más usuarios y ofrezca una experiencia fluida.",
+    "description-four": "Detecto cuellos de botella, malas prácticas y riesgos de seguridad para que puedas prevenir problemas antes de que sean costosos.",
+    "description-five": "Conecto tu producto con servicios externos (pagos, autenticación, análisis) para ampliar funcionalidades sin reinventar la rueda."
   },
   "projects": {
     "title": "Mis proyectos",
@@ -54,16 +55,13 @@
     "placeholder-affair": "Centrar un div.",
     "placeholder-message": "Necesito ayuda con un div, no puedo centrarlo."
   },
-  "recommendations": {
-    "title": "Recomendaciones",
-    "description": "Aquí algunas recomendaciones de colegas y clientes.",
-    "carlos-vizcaya": "Muchas veces impulsó al equipo con una actitud muy proactiva, ayudando a que todos estuviéramos alineados y cumpliéramos con los objetivos a tiempo. Es de esas personas que no solo cumplen con lo que se espera de ellas, sino que además están siempre dispuestas a dar una mano, resolver bloqueos y aportar buena energía al grupo. Trabajar con él fue realmente un placer, y sin dudas sumaría muchísimo valor a cualquier equipo.",
-    "juliana-gonzalez": "Tiene sólidos conocimientos en desarrollo frontend, especialmente en tecnologías como React, manejo de estilos y Node.js. Además, es muy ágil, analítico, organizado y comunica sus ideas de forma clara y efectiva, lo cual hace que trabajar con él sea siempre fluido y enriquecedor. Nahuel también aporta un valor diferencial: tiene una mirada amplia del producto y del usuario, lo que eleva la calidad de las soluciones que desarrolla y potencia al equipo entero.",
-    "estefany-campos": "Lo que más admiro de Nahuel es su capacidad para ver los desafíos como oportunidades de crecimiento. Siempre aborda cada tarea con una actitud positiva y proactiva, lo que no solo lo convierte en un activo valioso para cualquier proyecto, sino que también inspira a quienes lo rodean."
-  },
   "error": {
     "message": "Ups, algo salió mal. Por favor, intentá de nuevo más tarde.",
     "button": "Volver al inicio"
+  },
+  "store": {
+    "description-one": "Desarrollé una aplicación backend completa con NestJS, conectada a una base de datos MongoDB, con énfasis en una arquitectura limpia, cobertura de pruebas (mediante Jest), automatización de CI/CD con GitHub Actions y observabilidad mediante Sentry.",
+    "description-two": "El proyecto muestra cómo estructurar una base de código backend escalable con modularización, gestión de errores y pruebas de integración. Las solicitudes de extracción se validan automáticamente con linters, herramientas de auditoría y umbrales de cobertura para garantizar la calidad y la mantenibilidad del código."
   },
   "belo": {
     "description": "Rediseño y desarrollo del nuevo home y diversas páginas de belo.app, una aplicación web que ofrece una experiencia moderna. El proyecto se construyó utilizando TypeScript, Wouter, Next.js y Tailwind CSS, la implementación de traducciones a 3 idiomas mediante i18n, priorizando una interfaz de usuario atractiva, un rendimiento óptimo."

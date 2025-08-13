@@ -20,7 +20,7 @@ const MenuBurger: React.FC<MenuBurgerProps> = ({ width = 21, height = 14, classN
       <path
         id="Vector"
         d="M3 15H21M3 9H21"
-        stroke="#A8A8A8"
+        stroke="#FFFFFF"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"

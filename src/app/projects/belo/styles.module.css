@@ -52,7 +52,7 @@
 
 .belo__disclaimer_link:hover {
   /* 3. Typography */
-  color: var(--primary-light);
+  color: var(--gray-dark);
 }
 
 .belo__description {
@@ -118,20 +118,20 @@
   /* 2. Box model */
   padding: var(--space-16);
   width: fit-content;
-  border: 1px solid var(--gray-light);
   border-radius: var(--space-8);
 
-  /* 2. Box model */
+  /* 3. Typography */
   text-transform: uppercase;
   color: var(--white-light);
+  background-color: var(--black-light);
 
   /* 4.Visuals */
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .belo__button_text:hover {
-  /* 3. Typography */
-  color: var(--gray);
+  /* 2. Box model */
+  background-color: var(--gray-dark);
 }
 
 @media (min-width: 768px) {
@@ -148,10 +148,5 @@
 
     /* 2. Box model */
     width: fit-content;
-  }
-
-  .belo__img:hover {
-    /* 4.Visuals */
-    transform: scale(1.5);
   }
 }

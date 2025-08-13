@@ -15,26 +15,27 @@
     "disclaimer": "Developed by @inzumer — or Nahuel Zamuner, if you prefer."
   },
   "presentation": {
-    "title-one": "Hi",
-    "title-two": "I'm Nahuel Zamuner"
+    "title-one": "INZUMER",
+    "title-two": "Software Developer @inzumer — or Nahuel Zamuner, if you prefer."
   },
   "about": {
     "title": "About Me",
-    "text-one": "I develop and optimize interfaces, prioritizing accessibility and reliability. I have over 3 years of experience as a ",
-    "text-two": ", actively participating in technical and product decision-making from the frontend side. I focus on ensuring the performance, stability, and quality of every product I work on. I’m driven by staying up-to-date with the latest frontend technologies and taking on challenges that push me to grow professionally."
+    "text-one": "I develop and optimize interfaces with a strong focus on accessibility and reliability. I have over 4 years of experience as a ",
+    "text-two": ", actively contributing to technical and product decision-making from both frontend and backend perspectives. I focus on ensuring the performance, stability, and quality of every product I work on.",
+    "text-three": " I’m driven by staying up to date with the latest technologies and taking on challenges that foster my professional growth. I enjoy being part of the full development cycle of products, supporting their evolution, and working with a long-term vision."
   },
   "skills": {
-    "title": "Principal Skills"
-  },
-  "work": {
-    "title": "My Work",
-    "text": "These are some of the companies I've contributed to."
-  },
-  "experience": {
-    "title": "Professional Experience",
-    "freelancer": "During my time as a freelance frontend developer, I focused on building web applications from scratch. I worked closely with UX/UI teams, actively participating in the definition of interfaces and user flows. In some projects, I also took on the role of 'designer', creating visual proposals from research to final wireframes. This experience allowed me to develop a comprehensive view of the product, combining design, development, and usability.",
-    "meli-ssr": "Developed services, middlewares, and controllers for seamless API interaction. Maintained and documented a shared React component library using Storybook to support consuming teams. Implemented tests with Testing Library and conducted e2e testing with Cucumber and Playwright. Monitored deployments with New Relic and tracked performance metrics with Datadog.",
-    "meli-jr": "Involvement in legacy projects using technologies such as Backbone.js, Handlebars, and Marionette.js. Debugging with Kibana. Development of new features with React. Interface styling with Sass."
+    "title": "How I can help you",
+    "title-one": "Build web pages",
+    "title-two": "Build cross-platform applications",
+    "title-three": "Optimize and scale your existing platform",
+    "title-four": "Audit your code and architecture",
+    "title-five": "Integrate technologies and APIs",
+    "description-one": "From concept to launch, I build fast, accessible, and optimized sites so you don’t lose customers to slow load times or poor usability.",
+    "description-two": "A single codebase for web, iOS, and Android, reducing costs and time-to-market without compromising quality.",
+    "description-three": "I enhance performance, security, and stability so your product can handle more users and deliver a seamless experience.",
+    "description-four": "I identify bottlenecks, bad practices, and security risks so you can prevent costly issues before they arise.",
+    "description-five": "I connect your product to external services (payments, authentication, analytics) to expand functionality without reinventing the wheel."
   },
   "projects": {
     "title": "My Projects",
@@ -54,19 +55,16 @@
     "placeholder-affair": "Center a div.",
     "placeholder-message": "I need help centering a div, I just can't get it right."
   },
-  "recommendations": {
-    "title": "Recommendations",
-    "description": "Here are some recommendations from colleagues and clients.",
-    "carlos-vizcaya": "Many times, he drove the team forward with a very proactive attitude, helping everyone stay aligned and meet our goals on time. He is one of those people who not only fulfills what is expected of them but is also always willing to lend a hand, unblock issues, and bring positive energy to the group. Working with him was truly a pleasure, and he would undoubtedly add tremendous value to any team.",
-    "juliana-gonzalez": "He has solid knowledge in frontend development, especially in technologies like React, style management, and Node.js. In addition, he is very agile, analytical, organized, and communicates his ideas clearly and effectively, which makes working with him always smooth and enriching. Nahuel also brings a unique value: he has a broad perspective of both the product and the user, which elevates the quality of the solutions he develops and enhances the entire team.",
-    "estefany-campos": "What I admire most about Nahuel is his ability to see challenges as opportunities for growth. He always approaches each task with a positive and proactive attitude, which not only makes him a valuable asset to any project but also inspires those around him."
-  },
   "error": {
     "message": "Oops, something went wrong. Please try again later.",
     "button": "Back to home"
   },
   "belo": {
     "description": "Redesign and development of the new homepage and several pages of belo.app, a web application offering a modern experience. The project was built using TypeScript, Wouter, Next.js, and Tailwind CSS, with the implementation of translations into 3 languages via i18n, prioritizing an attractive user interface and optimal performance."
+  },
+  "store": {
+    "description-one": "Developed a full-featured backend application using NestJS, connected to a MongoDB database, with a focus on clean architecture, test coverage (via Jest), CI/CD automation using GitHub Actions, and observability through Sentry.",
+    "description-two": "The project showcases how to structure a scalable backend codebase with modularization, error handling, and integration testing. Pull requests are validated automatically with linters, audit tools, and coverage thresholds to ensure code quality and maintainability."
   },
   "payments": {
     "description-one": "I actively participated in the migration of Mercado Libre's checkout payment system to versions V2 and V2.1. This critical process enabled the smooth combination of multiple payment methods and the integration of smart discounts, modernizing the architecture to ensure scalability and the adoption of cutting-edge technologies.",
