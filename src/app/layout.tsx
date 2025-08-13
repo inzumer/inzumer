@@ -1,7 +1,7 @@
 /** Resources */
 import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next';
-import { Roboto_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { Footer, Menu, I18nLayout } from '@components';
 import { DESCRIPTION, NAME, TWITTER } from '@constants';
 
@@ -9,7 +9,7 @@ import { DESCRIPTION, NAME, TWITTER } from '@constants';
 import './styles.css';
 
 /** Font configuration */
-const robotoMono = Roboto_Mono({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   variable: '--font-roboto-mono',
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.inzumer.com'),
   title: `${NAME}`,
   description: `${DESCRIPTION}`,
+  verification: {
+    google: 'QN0sWIaqD9UtHKO-cYsbv3HQCGg489vpVrqTIcWTSLg',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -64,7 +67,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body id='root' className={robotoMono.className}>
+      <body id='root' className={inter.className}>
         <I18nLayout>
           <Menu />
           <main id='main' data-testid='main'>

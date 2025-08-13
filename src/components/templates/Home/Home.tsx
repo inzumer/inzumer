@@ -1,17 +1,15 @@
 'use client';
 
 /** Resources */
-import { Presentation, SectionOne, SectionTwo, SectionThree, SectionFour, SectionFive, SectionSix } from './utils';
+import { Presentation, AboutMe, Skills, Projects, ContactMe } from './utils';
 
 const Home: React.FC = () => (
   <>
     <Presentation />
-    <SectionOne />
-    <SectionTwo />
-    <SectionThree />
-    <SectionFour />
-    <SectionFive />
-    <SectionSix />
+    <AboutMe />
+    <Skills />
+    <Projects />
+    <ContactMe />
   </>
 );
 

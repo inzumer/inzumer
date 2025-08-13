@@ -1,12 +1,18 @@
 .card {
   /* 2. Box model */
-  width: fit-content;
+  display: flex;
+  flex-direction: column;
 
   /* 4. Visuals */
-  background: var(--black-light);
   border-radius: var(--space-8);
+  border: 1px solid var(--black-light);
   transition: transform 0.3s ease;
   overflow: hidden;
+}
+
+.card:hover {
+  /* 4. Visuals */
+  transform: scale(1.01);
 }
 
 .card__container {
@@ -19,18 +25,15 @@
   overflow: hidden;
 }
 
-.card__img {
-  /* 4. Visuals */
-  border-top-left-radius: var(--space-8);
-  border-top-right-radius: var(--space-8);
-  overflow: hidden;
-  transition: transform 0.4s ease;
-  transform: scale(1.1)
-}
+.card__title {
+  /* 2. Box model */
+  padding: var(--space-16) 0;
+  margin-bottom: var(--space-16);
+  border-bottom: .5px solid white;
+  max-width: 60%;
 
-.card:hover .card__img {
-  /* 4. Visuals */
-  transform: scale(1.2)
+  /* 3. Typography */
+  text-transform: uppercase;
 }
 
 .card__text {
@@ -43,5 +46,35 @@
 
 .card__description {
   /* 3. Typography */
+  color: var(--white-dark);
+}
+
+.card__disclaimer {
+  /* 1. Positioning */
+  display: block;
+
+  /* 2. Box model */
+  margin-top: var(--space-16);
+  width: fit-content;
+
+  /* 3. Typography */
   color: var(--gray-light);
+}
+
+.card__icon {
+  /* 1. Positioning */
+  align-self: end;
+
+  /* 2. Box model */
+  padding: var(--space-8);
+
+  /* 4. Visuals */
+  transform: rotate(-90deg);
+}
+
+@media (min-width: 768px) {
+  .card {
+    /* 2. Box model */
+    max-width: 48%;
+  }
 }

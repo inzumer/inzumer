@@ -32,4 +32,4 @@ export const NAME = 'Inzumer';
 
 export const TWITTER = '@inzumer';
 
-export const DESCRIPTION = "Development and optimization of fast, accessible, and reliable interfaces. I'm fluent in React.js, Next.js, TypeScript, Tailwind CSS, Jest, and Playwright. I guarantee performance, stability, and quality. I have over 3 years of experience in front-end development.";
+export const DESCRIPTION = "Development and optimization of fast, accessible, and reliable interfaces. I'm fluent in React.js, Next.js, NestJS, TypeScript, Express, Tailwind CSS, Jest, and Playwright. I guarantee performance, stability, and quality. I have over 4 years of experience in full stack development.";
