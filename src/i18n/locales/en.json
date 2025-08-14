@@ -1,12 +1,10 @@
 {
   "header": {
     "home": "Home",
-    "about": "About",
-    "work": "Work",
-    "experience": "Experience",
+    "about": "About me",
+    "skills": "How I can help you",
     "projects": "Projects",
-    "contact": "Contact",
-    "recommendations": "Recommendations"
+    "contact": "Contact"
   },
   "footer": {
     "about": "About Me",
