@@ -1,6 +1,7 @@
 /** Resources */
 import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from 'next/font/google';
 import { Footer, Menu, I18nLayout } from '@components';
 import { DESCRIPTION, NAME, TWITTER } from '@constants';
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id='main' data-testid='main'>
             {children}
             <Analytics />
+            <SpeedInsights />
           </main>
           <Footer />
         </I18nLayout>
