@@ -2,11 +2,9 @@
   "header": {
     "home": "Inicio",
     "about": "Sobre mí",
-    "work": "Trabajo",
-    "experience": "Experiencia",
+    "skills": "En qué puedo ayudarte",
     "projects": "Proyectos",
-    "contact": "Contacto",
-    "recommendations": "Recomendaciones"
+    "contact": "Contacto"
   },
   "footer": {
     "about": "Sobre mí",
