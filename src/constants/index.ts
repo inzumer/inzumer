@@ -18,7 +18,7 @@ export const SOCIAL = [
   { url: SOCIAL_LINKS.LINKEDIN, name: 'LinkedIn' },
 ];
 
-export const LANGUAGES = ['en', 'es', 'it'];
+export const LANGUAGES = ['en', 'es'];
 
 /** API */
 const API = '/api';
@@ -32,4 +32,4 @@ export const NAME = 'Inzumer';
 
 export const TWITTER = '@inzumer';
 
-export const DESCRIPTION = "Development and optimization of fast, accessible, and reliable interfaces. I'm fluent in React.js, Next.js, NestJS, TypeScript, Express, Tailwind CSS, Jest, and Playwright. I guarantee performance, stability, and quality. I have over 4 years of experience in full stack development.";
+export const DESCRIPTION = "Hi 👋 I’m a Software Engineer • Fullstack Developer, whichever you prefer. I have 4 years of experience in high-traffic environments, specializing in creating and optimizing scalable and reliable interfaces. I’ve played a key role in high-impact projects, including the checkout of Mercado Libre, focusing on delivering fast, accessible, and stable user experiences. My background combines complex application development, collaboration with multidisciplinary teams, and continuous improvement of product performance and stability.";

@@ -25,10 +25,11 @@
 
   /* 4.Visuals */
   background-color: var(--black-light);
-  transition: background-color .3s ease;
+  border: 1px solid transparent;
+  transition: all .3s ease;
 }
 
 .form__button:hover {
   /* 4.Visuals */
-  background-color: var(--gray-dark);
+  border: 1px solid var(--gray-dark);
 }

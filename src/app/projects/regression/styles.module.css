@@ -127,14 +127,17 @@
 
   /* 2. Box model */
   text-transform: uppercase;
-  color: var(--white-light);
-  background-color: var(--black-light);
   
+  /* 3. Typography */
+  color: var(--white-light);
+
   /* 4.Visuals */
-  transition: background-color 0.3s ease;
+  background-color: var(--black-light);
+  border: 1px solid transparent;
+  transition: all .3s ease;
 }
 
 .regression__button_text:hover {
   /* 2. Box model */
-  background-color: var(--gray-dark);
+  border: 1px solid var(--gray-dark);
 }

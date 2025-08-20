@@ -1,6 +1,7 @@
 'use client';
 
 /** Resources */
+import Script from 'next/script';
 import { Icon, Image, Navigate, RichText, PagePosition } from '@components';
 import { useTranslation } from 'react-i18next';
 import { Images } from '@assets';
@@ -22,9 +23,10 @@ const Page: React.FC = () => {
   const IMAGES = ['Belo1', 'Belo2', 'Belo3', 'Belo4', 'Belo5', 'Belo6', 'Belo7', 'Belo8', 'Belo9'];
 
   return (
-    <section className={styles.belo}>
+    <>
+    <section id='belo' className={styles.belo}>
       <div className={styles.belo__container}>
-        <PagePosition id='belo' actual='Belo' list={LIST} />
+        <PagePosition id='belo-position' actual='Belo' list={LIST} />
 
         <div className={styles.belo__content}>
           <RichText id='belo-page-title' text={'Belo'} variant='h1' className={styles.belo__title} bold />
@@ -60,6 +62,21 @@ const Page: React.FC = () => {
         </Navigate>
       </div>
     </section>
+    <Script
+        id='schema-breadcrumb-api-store'
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.inzumer.com/' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Belo', 'item': 'https://www.inzumer.com/projects/belo' }
+            ]
+          })
+        }}
+      />
+    </>
   );
 }
 
