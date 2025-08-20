@@ -223,7 +223,8 @@
 @media (min-width: 768px) {
   .presentation__title {
     /* 3. Typography */
-    font-size: 16rem !important;
+    font-size: var(--space-16) !important;
+    line-height: 1;
   }
 
   .presentation__subtitle {

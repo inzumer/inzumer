@@ -127,16 +127,19 @@
 
   /* 2. Box model */
   text-transform: uppercase;
+
+  /* 3. Typography */
   color: var(--white-light);
-  background-color: var(--black-light);
 
   /* 4.Visuals */
-  transition: background-color 0.3s ease;
+  background-color: var(--black-light);
+  border: 1px solid transparent;
+  transition: all .3s ease;
 }
 
 .payments__button_text:hover {
   /* 2. Box model */
-  background-color: var(--gray-dark);
+  border: 1px solid var(--gray-dark);
 }
 
 @media (min-width: 768px) {
