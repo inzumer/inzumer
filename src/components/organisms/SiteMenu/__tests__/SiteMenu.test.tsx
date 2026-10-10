@@ -44,4 +44,20 @@ describe('SiteMenu', () => {
       'false',
     );
   });
+
+  it('should close from the X in the hamburger corner', async () => {
+    const user = userEvent.setup();
+    renderMenu();
+
+    await user.click(screen.getByRole('button', { name: 'Abrir menú' }));
+    const close = screen.getByRole('button', { name: 'Cerrar menú' });
+
+    expect(close).toHaveAttribute('id', 'menu-button-close');
+    expect(close.className).toContain('right-[calc(2rem_+_env(safe-area-inset-right))]');
+    await user.click(close);
+    expect(screen.getByRole('button', { name: 'Abrir menú' })).toHaveAttribute(
+      'aria-expanded',
+      'false',
+    );
+  });
 });

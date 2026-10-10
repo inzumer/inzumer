@@ -43,6 +43,21 @@ src/
   utils/        locale, routes, settings, SEO, contact schema, rate limit…
 ```
 
+## Projects
+
+The home shows the projects as tabs; **View project** opens all of it without leaving the page: a
+`Modal` on desktop and a `BottomSheet` on phones (ui-library), with the screens in a carousel and
+the Markdown body. Each project keeps its own page for search engines and sharing, linked from the
+dialog. To add one, write `src/content/projects/{en,es}/<slug>.md` with its images in
+`src/assets/projects/<slug>/`.
+
+## Menu and waits
+
+The hamburger opens the sections over the whole screen (the lib's `Drawer` at full width). While a
+message is on its way, or another page of the site loads for more than 300 ms, the lib's `Loader`
+covers the page with the site background, a thin spinning ring and friendly questions
+in the page's language, from `common.loader` in `src/i18n`.
+
 ## Contact emails
 
 `/api/contact` validates the form, drops bots (honeypot) and floods (5 per address every 10
