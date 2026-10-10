@@ -15,6 +15,10 @@ export interface SiteMenuProps {
   labels: { open: string; close: string; title: string; navigation: string };
 }
 
+/** The same corner for the hamburger and the X, so one turns into the other. */
+const cornerButtonClass =
+  'top-[calc(2rem_+_env(safe-area-inset-top))] right-[calc(2rem_+_env(safe-area-inset-right))] z-40 size-11 rounded-full';
+
 const linkClass =
   'group flex min-h-11 items-baseline gap-5 text-[clamp(3.2rem,7vw,6.4rem)] leading-[1.1] font-light tracking-[-0.035em] uppercase transition-colors hover:text-(--text-secondary) focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--border-focus) motion-reduce:transition-none';
 
@@ -34,7 +38,7 @@ export const SiteMenu = ({ links, language, labels }: SiteMenuProps) => {
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen(true)}
-        className="fixed top-[calc(2rem_+_env(safe-area-inset-top))] right-[calc(2rem_+_env(safe-area-inset-right))] z-40 size-11 rounded-full"
+        className={`fixed ${cornerButtonClass}`}
       >
         <Icon name="menu" size="lg" />
       </Button>
@@ -44,9 +48,19 @@ export const SiteMenu = ({ links, language, labels }: SiteMenuProps) => {
         onClose={close}
         title={labels.title}
         titleClassName="sr-only"
-        closeLabel={labels.close}
         className="max-w-none border-0 px-[calc(2.4rem_+_env(safe-area-inset-left))] shadow-none md:px-[12%]"
       >
+        {/* The panel covers the screen, so this corner is the hamburger's. */}
+        <Button
+          id={trackingId('menu', 'button', 'close')}
+          variant="ghost"
+          size="icon"
+          aria-label={labels.close}
+          onClick={close}
+          className={`absolute ${cornerButtonClass}`}
+        >
+          <Icon name="close" size="lg" />
+        </Button>
         <nav aria-label={labels.navigation} className="my-auto flex flex-col gap-1 py-8 md:gap-2">
           {links.map((link, index) => (
             <a

@@ -1,7 +1,4 @@
-/** Thin ring that spins around a dot that pulses; white, for the Loader's dark screen. */
+/** Thin ring in the site colors; the Loader spins it. */
 export const LoaderMark = () => (
-  <span className="relative block">
-    <span className="absolute inset-0 rounded-full border border-white/20 border-t-white" />
-    <span className="absolute inset-[38%] animate-pulse rounded-full bg-white motion-reduce:animate-none" />
-  </span>
+  <span className="block rounded-full border border-(--border-strong) border-t-(--text-primary)" />
 );

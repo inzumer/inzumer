@@ -2,10 +2,9 @@ import { render } from '@testing-library/react';
 import { LoaderMark } from '../LoaderMark';
 
 describe('LoaderMark', () => {
-  it('should draw a ring around a pulsing dot that stops with reduced motion', () => {
+  it('should draw a thin ring with the text color on top', () => {
     const { container } = render(<LoaderMark />);
 
-    expect(container.querySelector('.border-t-white')).toBeInTheDocument();
-    expect(container.querySelector('.animate-pulse')).toHaveClass('motion-reduce:animate-none');
+    expect(container.firstChild).toHaveClass('rounded-full', 'border', 'border-t-(--text-primary)');
   });
 });

@@ -8,10 +8,10 @@ export interface SiteLoaderProps {
   messages: readonly string[];
 }
 
-/** Full-screen wait: the lib's Loader with our mark and the questions, blocking the page behind. */
+/** Full-screen wait over the site's own background: a thin ring and the questions, thin type. */
 export const SiteLoader = ({ label, messages }: SiteLoaderProps) => (
-  // Above the dialogs too: a link inside a project can start the wait.
-  <div className="relative z-[60]">
+  // Above the dialogs too; the lib's dark blur gives way to the page color.
+  <div className="relative z-[60] [&>div]:bg-(--surface-primary) [&>div]:backdrop-blur-none">
     <Loader
       screen
       label={label}
@@ -19,7 +19,7 @@ export const SiteLoader = ({ label, messages }: SiteLoaderProps) => (
       mark={<LoaderMark />}
       size="lg"
       speed="slow"
-      className="[&>span:last-child]:max-w-[32rem] [&>span:last-child]:text-[1.8rem] [&>span:last-child]:font-light [&>span:last-child]:tracking-[-0.01em]"
+      className="gap-8 [&_span]:text-[1.8rem] [&_span]:font-light [&_span]:tracking-[-0.01em] [&_span]:text-(--text-primary) [&_span]:drop-shadow-none [&>span:last-child]:max-w-[32rem]"
     />
   </div>
 );
