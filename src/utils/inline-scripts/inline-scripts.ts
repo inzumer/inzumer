@@ -1,8 +1,11 @@
 // Inline scripts as exact strings, hashed for the CSP in astro.config.mjs. No imports on purpose.
 
-/** Applies the color scheme before the first paint: saved choice first, then the OS (live). */
-export const themeScript = (storageKey: string): string =>
-  `(()=>{const k=${JSON.stringify(storageKey)};const r=document.documentElement;const m=matchMedia('(prefers-color-scheme: dark)');const s=()=>{try{const v=JSON.parse(localStorage.getItem(k)||'null')?.colorScheme;return v==='dark'||v==='light'?v:null}catch{return null}};const a=()=>{r.dataset.colorScheme=s()??(m.matches?'dark':'light')};a();m.addEventListener('change',()=>{if(!s())a()})})();`;
+/**
+ * Applies the color scheme before the first paint: saved choice first, then `fallback` when the
+ * site has a default look, else the OS (live).
+ */
+export const themeScript = (storageKey: string, fallback?: 'dark' | 'light'): string =>
+  `(()=>{const k=${JSON.stringify(storageKey)};const f=${JSON.stringify(fallback ?? null)};const r=document.documentElement;const m=matchMedia('(prefers-color-scheme: dark)');const s=()=>{try{const v=JSON.parse(localStorage.getItem(k)||'null')?.colorScheme;return v==='dark'||v==='light'?v:null}catch{return null}};const a=()=>{r.dataset.colorScheme=s()??f??(m.matches?'dark':'light')};a();m.addEventListener('change',()=>{if(!s())a()})})();`;
 
 export interface LanguageRedirectOptions {
   storageKey: string;

@@ -40,6 +40,19 @@ describe('inline scripts', () => {
     expect(document.documentElement.dataset['colorScheme']).toBe('light');
   });
 
+  it('should use the site default before the OS when there is no saved choice', () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: false, addEventListener: vi.fn() }));
+
+    run(themeScript('inzumer:settings', 'dark'));
+    expect(document.documentElement.dataset['colorScheme']).toBe('dark');
+
+    localStorage.setItem('inzumer:settings', JSON.stringify({ colorScheme: 'light' }));
+    run(themeScript('inzumer:settings', 'dark'));
+    expect(document.documentElement.dataset['colorScheme']).toBe('light');
+    localStorage.clear();
+    vi.unstubAllGlobals();
+  });
+
   it('should redirect to the saved language, then the browser language, under the base', () => {
     const replace = vi.fn();
     vi.stubGlobal('location', { replace });
