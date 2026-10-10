@@ -6,3 +6,4 @@ export * from './settings';
 export * from './static-paths';
 export * from './storage';
 export * from './tracking';
+export * from './contact';
