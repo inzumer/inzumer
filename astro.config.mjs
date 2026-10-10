@@ -16,7 +16,9 @@ import {
 import { DEFAULT_LOCALE, LOCALES } from './src/utils/locale/locale.ts';
 
 /** Project slugs, for the 308 redirects of the old English URLs (`/projects/belo`). */
-const PROJECT_SLUGS = readdirSync('src/content/projects/en').map((file) => file.replace(/\.md$/, ''));
+const PROJECT_SLUGS = readdirSync('src/content/projects/en').map((file) =>
+  file.replace(/\.md$/, ''),
+);
 
 /**
  * @param {string} text
@@ -50,7 +52,6 @@ const csp = {
   scriptDirective: { resources: ["'self'"], hashes: inlineScriptHashes },
   styleDirective: {
     resources: [
-      "'self'",
       { resource: "'self'", kind: 'element' },
       { resource: "'unsafe-inline'", kind: 'attribute' },
     ],
@@ -65,7 +66,9 @@ export default defineConfig({
   prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
   security: { csp },
   redirects: {
-    ...Object.fromEntries(PROJECT_SLUGS.map((slug) => [`/projects/${slug}`, `/en/projects/${slug}`])),
+    ...Object.fromEntries(
+      PROJECT_SLUGS.map((slug) => [`/projects/${slug}`, `/en/projects/${slug}`]),
+    ),
     // Retired project; its old URL lands on the home.
     '/projects/api-store': '/en',
   },
@@ -76,7 +79,9 @@ export default defineConfig({
       filter: (page) => {
         const { pathname } = new URL(page);
 
-        return pathname !== '/' && !pathname.includes('404') && pathname.split('/')[1] !== 'projects';
+        return (
+          pathname !== '/' && !pathname.includes('404') && pathname.split('/')[1] !== 'projects'
+        );
       },
     }),
   ],

@@ -12,7 +12,14 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-  globalIgnores(['dist/**', '.astro/**', 'coverage/**', 'node_modules/**', 'public/**']),
+  globalIgnores([
+    'dist/**',
+    '.vercel/**',
+    '.astro/**',
+    'coverage/**',
+    'node_modules/**',
+    'public/**',
+  ]),
 
   {
     files: ['**/*.{js,mjs,cjs,ts,tsx,astro}'],

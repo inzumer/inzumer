@@ -46,5 +46,10 @@ describe('ServicesCarousel', () => {
     expect(screen.getByRole('button', { name: 'Anterior' })).toBeDisabled();
     await user.click(next);
     expect(scrollBy).toHaveBeenCalledOnce();
+
+    Object.defineProperty(list, 'scrollLeft', { value: 1000, configurable: true });
+    fireEvent.scroll(list);
+    await user.click(screen.getByRole('button', { name: 'Anterior' }));
+    expect(scrollBy).toHaveBeenCalledTimes(2);
   });
 });

@@ -7,3 +7,6 @@ export * from './static-paths';
 export * from './storage';
 export * from './tracking';
 export * from './contact';
+export * from './seo';
+export * from './projects';
+export * from './rate-limit';

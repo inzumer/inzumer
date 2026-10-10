@@ -20,9 +20,9 @@ This is a project developed with [Next.js](https://nextjs.org), initialized with
 Styles are written using CSS Modules, with the following class naming convention:
 
 ```ts
-styles.blockName__element
+styles.blockName__element;
 
-Example: styles.card__title, styles.hero__image
+Example: (styles.card__title, styles.hero__image);
 ```
 
 ---
@@ -100,4 +100,3 @@ Check out the deployment [documentation]('https://nextjs.org/docs/app/building-y
 ## 📬 Comments
 
 All suggestions or contributions are welcome!
-

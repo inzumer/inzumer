@@ -1,7 +1,7 @@
-import { spawn } from 'node:child_process';
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { createServer } from 'node:http';
 import { createRequire } from 'node:module';
-import { join, relative, sep } from 'node:path';
+import { extname, join, relative, sep } from 'node:path';
 import { launchChrome, sleep } from './lib/chrome.mjs';
 
 const require = createRequire(import.meta.url);
@@ -9,6 +9,10 @@ const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const PORT = Number(process.env.PORT ?? 4329);
 const SITE_BASE = (process.env.BASE_PATH ?? '').replace(/\/+$/, '');
 const BASE = `http://localhost:${PORT}${SITE_BASE}`;
+/** Static pages: `dist/client` with the Vercel adapter, `dist` without one. */
+const DIST = existsSync(join('dist', 'client')) ? join('dist', 'client') : 'dist';
+/** The theme follows the saved choice (the site starts dark), not the OS. */
+const SETTINGS_KEY = 'inzumer:settings';
 
 const pages = (function collect(dir) {
   return readdirSync(dir).flatMap((entry) => {
@@ -17,49 +21,62 @@ const pages = (function collect(dir) {
       return entry === '_astro' ? [] : collect(path);
     }
 
-    if (!entry.endsWith('.html') || entry === '404.html' || path === join('dist', 'index.html')) {
+    if (
+      !entry.endsWith('.html') ||
+      entry === '404.html' ||
+      // Search Console ownership file, not a page.
+      entry.startsWith('google') ||
+      path === join(DIST, 'index.html')
+    ) {
       return [];
     }
 
     return [
-      `/${relative('dist', path)
+      `/${relative(DIST, path)
         .split(sep)
         .join('/')
         .replace(/(\/?index)?\.html$/, '')}`,
     ];
   });
-})('dist');
+})(DIST);
 
-const astroPackage = require.resolve('astro/package.json');
-const astroBin = join(astroPackage, '..', require(astroPackage).bin.astro);
-const preview = spawn(process.execPath, [astroBin, 'preview', '--port', String(PORT)], {
-  stdio: 'ignore',
-});
+const TYPES = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'text/javascript',
+  '.css': 'text/css',
+  '.webp': 'image/webp',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.woff2': 'font/woff2',
+  '.ico': 'image/x-icon',
+};
+/** Serves the built pages: `/es` → `es/index.html`. */
+const server = createServer((request, response) => {
+  const pathname = decodeURIComponent(new URL(request.url ?? '/', BASE).pathname).slice(
+    SITE_BASE.length,
+  );
+  const candidates = [
+    join(DIST, pathname),
+    join(DIST, pathname, 'index.html'),
+    join(DIST, `${pathname}.html`),
+  ];
+  const file = candidates.find(
+    (candidate) => existsSync(candidate) && statSync(candidate).isFile(),
+  );
+
+  if (!file) {
+    response.writeHead(404);
+    response.end();
+
+    return;
+  }
+
+  response.writeHead(200, { 'Content-Type': TYPES[extname(file)] ?? 'application/octet-stream' });
+  response.end(readFileSync(file));
+}).listen(PORT);
+const preview = { kill: () => server.close() };
 let browser;
 try {
-  let previewExited = false;
-  preview.on('exit', () => {
-    previewExited = true;
-  });
-  let ready = false;
-  for (let i = 0; i < 120 && !ready && !previewExited; i += 1) {
-    try {
-      ready = (await fetch(`${BASE}/es`)).ok;
-    } catch {
-      ready = false;
-    }
-    if (!ready) {
-      await sleep(500);
-    }
-  }
-  if (!ready) {
-    throw new Error(
-      previewExited
-        ? `The preview server exited before starting (is port ${PORT} in use?)`
-        : `The preview server did not start on ${BASE}`,
-    );
-  }
-
   browser = await launchChrome(PORT + 1);
   const { send, evaluate } = browser;
   await send('Page.enable');
@@ -72,9 +89,11 @@ try {
 
   const failures = [];
   for (const scheme of ['light', 'dark']) {
-    await send('Emulation.setEmulatedMedia', {
-      features: [{ name: 'prefers-color-scheme', value: scheme }],
-    });
+    await send('Page.navigate', { url: `${BASE}/en` });
+    await sleep(500);
+    await evaluate(
+      `localStorage.setItem('${SETTINGS_KEY}', JSON.stringify({ colorScheme: '${scheme}' }))`,
+    );
     for (const [index, page] of pages.entries()) {
       const navigation = await send('Page.navigate', { url: `${BASE}${page}` });
       if (navigation.result?.errorText) {

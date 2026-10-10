@@ -37,7 +37,7 @@ export const ProjectShowcase = ({ title, projects, labels }: ProjectShowcaseProp
   const titleId = `${baseId}-title`;
   const panelId = `${baseId}-panel`;
   const [active, setActive] = useState(0);
-  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const total = projects.length;
   const project = projects[active];
   const tabId = (index: number) =>
@@ -51,7 +51,7 @@ export const ProjectShowcase = ({ title, projects, labels }: ProjectShowcaseProp
     setActive(index);
 
     if (focus) {
-      tabs.current[index]?.focus();
+      tabsRef.current[index]?.focus();
     }
   };
 
@@ -86,7 +86,7 @@ export const ProjectShowcase = ({ title, projects, labels }: ProjectShowcaseProp
           role="tablist"
           aria-label={labels.list}
           aria-orientation="vertical"
-          className="flex gap-2 overflow-x-auto [scrollbar-width:none] lg:flex-col lg:gap-1"
+          className="flex [scrollbar-width:none] gap-2 overflow-x-auto lg:flex-col lg:gap-1"
         >
           {projects.map((item, index) => {
             const selected = index === active;
@@ -95,7 +95,7 @@ export const ProjectShowcase = ({ title, projects, labels }: ProjectShowcaseProp
               <button
                 key={item.slug}
                 ref={(element) => {
-                  tabs.current[index] = element;
+                  tabsRef.current[index] = element;
                 }}
                 id={tabId(index)}
                 type="button"
@@ -105,9 +105,9 @@ export const ProjectShowcase = ({ title, projects, labels }: ProjectShowcaseProp
                 tabIndex={selected ? 0 : -1}
                 onClick={() => select(index)}
                 onKeyDown={onKeyDown}
-                className={`flex min-h-11 shrink-0 items-center gap-3 rounded-md px-1 text-left text-[1.4rem] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--border-focus) motion-reduce:transition-none ${
+                className={`flex min-h-11 shrink-0 items-center rounded-md px-1 text-left text-[1.4rem] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--border-focus) motion-reduce:transition-none ${
                   selected
-                    ? 'font-normal text-(--text-primary)'
+                    ? 'gap-3 font-normal text-(--text-primary)'
                     : 'font-light text-(--text-tertiary) hover:text-(--text-secondary)'
                 }`}
               >
@@ -135,11 +135,16 @@ export const ProjectShowcase = ({ title, projects, labels }: ProjectShowcaseProp
               alt={project.cover.alt}
               loading={active === 0 ? 'eager' : 'lazy'}
               decoding="async"
-              className="aspect-[4/3] w-full object-cover grayscale-[1] contrast-[1.05]"
+              className="aspect-[4/3] w-full object-cover contrast-[1.05] grayscale-[1]"
             />
           </div>
           <div className="flex flex-col gap-5">
-            <RichText as="h3" variant="h3" weight="light" className="text-[2.8rem] leading-tight tracking-[-0.02em]">
+            <RichText
+              as="h3"
+              variant="h3"
+              weight="light"
+              className="text-[2.8rem] leading-tight tracking-[-0.02em]"
+            >
               {project.title}
             </RichText>
             <RichText variant="p3" weight="light" className="text-(--text-secondary)">

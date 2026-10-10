@@ -54,10 +54,46 @@
     }
   ],
   "skills": [
-    { "label": "Frontend", "items": ["React", "TypeScript", "Next.js", "Astro", "Tailwind CSS", "CSS Modules", "Zustand", "Redux"] },
-    { "label": "Quality", "items": ["Testing Library", "Jest", "Vitest", "Playwright", "Cucumber", "Accessibility (WCAG)"] },
-    { "label": "Performance and observability", "items": ["Core Web Vitals", "Datadog", "New Relic", "Kibana", "Grafana"] },
-    { "label": "Backend and tooling", "items": ["Node.js", "NestJS", "Express", "PostgreSQL", "MongoDB", "GitHub Actions", "Storybook"] }
+    {
+      "label": "Frontend",
+      "items": [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Astro",
+        "Tailwind CSS",
+        "CSS Modules",
+        "Zustand",
+        "Redux"
+      ]
+    },
+    {
+      "label": "Quality",
+      "items": [
+        "Testing Library",
+        "Jest",
+        "Vitest",
+        "Playwright",
+        "Cucumber",
+        "Accessibility (WCAG)"
+      ]
+    },
+    {
+      "label": "Performance and observability",
+      "items": ["Core Web Vitals", "Datadog", "New Relic", "Kibana", "Grafana"]
+    },
+    {
+      "label": "Backend and tooling",
+      "items": [
+        "Node.js",
+        "NestJS",
+        "Express",
+        "PostgreSQL",
+        "MongoDB",
+        "GitHub Actions",
+        "Storybook"
+      ]
+    }
   ],
   "education": [
     { "school": "Platzi", "program": "English Academy", "dates": "2025 – 2026" },

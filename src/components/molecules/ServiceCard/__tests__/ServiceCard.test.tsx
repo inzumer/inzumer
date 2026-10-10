@@ -13,7 +13,9 @@ describe('ServiceCard', () => {
       />,
     );
 
-    expect(screen.getByRole('heading', { level: 3, name: 'Interfaces rápidas' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 3, name: 'Interfaces rápidas' }),
+    ).toBeInTheDocument();
     expect(screen.getByText('Core Web Vitals en verde.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Hablemos' })).toHaveAttribute('href', '#contact');
     expect(screen.getByRole('link', { name: 'Hablemos' })).toHaveAttribute(

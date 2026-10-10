@@ -1,8 +1,4 @@
-import {
-  languageRedirectScript,
-  notFoundLanguageScript,
-  themeScript,
-} from '../inline-scripts';
+import { languageRedirectScript, notFoundLanguageScript, themeScript } from '../inline-scripts';
 
 const run = (script: string) => new Function(script)();
 

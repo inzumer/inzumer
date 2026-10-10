@@ -20,7 +20,11 @@ describe('sendContact', () => {
   });
 
   it('should report failure on an error status or a network error', async () => {
-    await expect(sendContact(input, vi.fn().mockResolvedValue(new Response(null, { status: 502 })))).resolves.toBe(false);
-    await expect(sendContact(input, vi.fn().mockRejectedValue(new Error('offline')))).resolves.toBe(false);
+    await expect(
+      sendContact(input, vi.fn().mockResolvedValue(new Response(null, { status: 502 }))),
+    ).resolves.toBe(false);
+    await expect(sendContact(input, vi.fn().mockRejectedValue(new Error('offline')))).resolves.toBe(
+      false,
+    );
   });
 });

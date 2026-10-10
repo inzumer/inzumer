@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { ContrastIcon, GitHubIcon, SERVICE_ICONS } from '../Icons';
+import { ContrastIcon, GitHubIcon, isServiceIconName, SERVICE_ICONS } from '../Icons';
 
 describe('Icons', () => {
   it('should draw every icon as a decorative SVG in the current color', () => {
@@ -12,5 +12,10 @@ describe('Icons', () => {
       expect(svg).toHaveAttribute('width', '24');
       unmount();
     }
+  });
+
+  it('should recognize only the service icon names', () => {
+    expect(isServiceIconName('speed')).toBe(true);
+    expect(isServiceIconName('rocket')).toBe(false);
   });
 });

@@ -16,11 +16,9 @@ describe('contact', () => {
   });
 
   it('should report each invalid field in form order', () => {
-    expect(invalidContactFields({ ...valid, email: 'nope', message: 'hi', name: '' })).toStrictEqual([
-      'name',
-      'email',
-      'message',
-    ]);
+    expect(
+      invalidContactFields({ ...valid, email: 'nope', message: 'hi', name: '' }),
+    ).toStrictEqual(['name', 'email', 'message']);
   });
 
   it('should reject a filled honeypot or an unknown language', () => {

@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useState, type SyntheticEvent } from 'react';
 import { Button, Input, RichText, Textarea } from '@inzumer/ui-library';
 import { sendContact } from '@services/contact';
 import { invalidContactFields, trackingId, type ContactField, type Locale } from '@utils';
@@ -33,7 +33,7 @@ export const ContactForm = ({ lang, labels, send = sendContact }: ContactFormPro
   const [status, setStatus] = useState<Status>('idle');
   const [invalid, setInvalid] = useState<ContactField[]>([]);
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formElement = event.currentTarget;
     const form = new FormData(formElement);
@@ -62,7 +62,9 @@ export const ContactForm = ({ lang, labels, send = sendContact }: ContactFormPro
     }
   };
 
-  const errorFor = (name: ContactField) => (invalid.includes(name) ? labels.invalid : undefined);
+  /** Only invalid fields get the prop (`exactOptionalPropertyTypes`). */
+  const errorFor = (name: ContactField) =>
+    invalid.includes(name) ? { error: labels.invalid } : {};
   const message = { success: labels.success, error: labels.error, invalid: labels.invalid }[
     status as 'success' | 'error' | 'invalid'
   ];
@@ -76,7 +78,7 @@ export const ContactForm = ({ lang, labels, send = sendContact }: ContactFormPro
         required
         label={labels.name}
         placeholder={labels.placeholderName}
-        error={errorFor('name')}
+        {...errorFor('name')}
       />
       <Input
         id={trackingId('contact', 'input', 'email')}
@@ -86,7 +88,7 @@ export const ContactForm = ({ lang, labels, send = sendContact }: ContactFormPro
         required
         label={labels.email}
         placeholder={labels.placeholderEmail}
-        error={errorFor('email')}
+        {...errorFor('email')}
       />
       <Textarea
         id={trackingId('contact', 'input', 'message')}
@@ -95,7 +97,7 @@ export const ContactForm = ({ lang, labels, send = sendContact }: ContactFormPro
         required
         label={labels.message}
         placeholder={labels.placeholderMessage}
-        error={errorFor('message')}
+        {...errorFor('message')}
       />
       <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label>

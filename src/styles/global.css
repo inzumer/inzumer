@@ -5,6 +5,7 @@
 @import '@inzumer/tokens/css/scrollbar';
 @import '@fontsource-variable/inter/wght.css';
 @import './theme.css';
+@import './project-prose.css';
 
 @config '../../tailwind.config.ts';
 

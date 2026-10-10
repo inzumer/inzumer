@@ -88,3 +88,6 @@ export const SERVICE_ICONS = {
 } as const;
 
 export type ServiceIconName = keyof typeof SERVICE_ICONS;
+
+export const isServiceIconName = (value: string): value is ServiceIconName =>
+  value in SERVICE_ICONS;

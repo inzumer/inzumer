@@ -14,7 +14,11 @@ const project = (slug: string, name: string): ShowcaseProject => ({
   cover: { src: `/${slug}.webp`, width: 800, height: 600, alt: `${name} cover` },
 });
 
-const projects = [project('payments-v2', 'Payments'), project('belo', 'Belo'), project('smart', 'Coupons')];
+const projects = [
+  project('payments-v2', 'Payments'),
+  project('belo', 'Belo'),
+  project('smart', 'Coupons'),
+];
 const labels = {
   list: 'Elegí un proyecto',
   view: 'Ver proyecto',
@@ -81,7 +85,9 @@ describe('ProjectShowcase', () => {
   });
 
   it('should render nothing without projects', () => {
-    const { container } = render(<ProjectShowcase title="Proyectos" projects={[]} labels={labels} />);
+    const { container } = render(
+      <ProjectShowcase title="Proyectos" projects={[]} labels={labels} />,
+    );
 
     expect(container).toBeEmptyDOMElement();
   });

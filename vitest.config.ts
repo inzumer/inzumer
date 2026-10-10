@@ -11,7 +11,14 @@ export default getViteConfig({
       provider: 'v8',
       reporter: ['text', 'lcov', 'json-summary'],
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/test/**', 'src/i18n/**', 'src/**/index.ts', 'src/**/*.d.ts', 'src/env.d.ts'],
+      exclude: [
+        'src/test/**',
+        'src/i18n/**',
+        'src/content.config.ts',
+        'src/**/index.ts',
+        'src/**/*.d.ts',
+        'src/env.d.ts',
+      ],
       thresholds: {
         lines: 90,
         branches: 90,

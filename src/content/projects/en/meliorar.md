@@ -6,7 +6,7 @@ kind: Backend
 summary: Business logic and integrations with external APIs in Node.js, Express and TypeScript on PostgreSQL with Prisma, with consistent data and tested workflows.
 stack: [Node.js, Express, TypeScript, PostgreSQL, Prisma]
 cover: ../../../assets/projects/meliorar/cover.png
-coverAlt: Meliorar title with its stack: Node.js, Express, TypeScript, PostgreSQL and Prisma
+coverAlt: 'Meliorar title with its stack: Node.js, Express, TypeScript, PostgreSQL and Prisma'
 order: 5
 ---
 

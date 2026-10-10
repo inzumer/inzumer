@@ -38,7 +38,7 @@ export const ServicesCarousel = ({ title, services, more, labels }: ServicesCaro
         ref={ref}
         id={trackId}
         onScroll={update}
-        className="-mx-1 grid snap-x snap-mandatory auto-cols-[85%] grid-flow-col gap-7 overflow-x-auto overscroll-x-contain px-1 pb-2 [scrollbar-width:none] sm:auto-cols-[calc((100%-2.8rem)/2)] lg:auto-cols-[calc((100%-5.6rem)/3)]"
+        className="-mx-1 grid snap-x snap-mandatory [scrollbar-width:none] auto-cols-[85%] grid-flow-col gap-7 overflow-x-auto overscroll-x-contain px-1 pb-2 sm:auto-cols-[calc((100%-2.8rem)/2)] lg:auto-cols-[calc((100%-5.6rem)/3)]"
       >
         {services.map((service, index) => (
           <li key={service.title} className="snap-start">

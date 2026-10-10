@@ -43,7 +43,12 @@ export const ExperienceList = ({ title, items }: ExperienceListProps) => {
             <ul className="flex list-disc flex-col gap-2 pl-6 marker:text-(--text-tertiary)">
               {item.highlights.map((highlight) => (
                 <li key={highlight}>
-                  <RichText as="span" variant="p3" weight="light" className="text-(--text-secondary)">
+                  <RichText
+                    as="span"
+                    variant="p3"
+                    weight="light"
+                    className="text-(--text-secondary)"
+                  >
                     {highlight}
                   </RichText>
                 </li>
