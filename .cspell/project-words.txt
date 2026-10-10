@@ -1,5 +1,6 @@
 astrojs
 belo
+Belo
 borderless
 claude
 Contame
@@ -7,13 +8,17 @@ cspell
 Dejá
 dvh
 escribime
+Escribime
 fontsource
 gitflow
+Gmail
 GMAIL
 Handlebars
 hotfixes
 hreflang
 inzumer
+Inzumer
+INZUMER
 jsdom
 latin
 lcov
@@ -21,6 +26,7 @@ linkedin
 logueo
 Marionette
 meliorar
+Meliorar
 mentoría
 mercadolibre
 milimon
@@ -30,6 +36,7 @@ nodemailer
 noindex
 nvmrc
 observabilidad
+Observabilidad
 overscroll
 Platzi
 PortAventura
@@ -52,4 +59,5 @@ WCAG
 wght
 Wouter
 zamuner
+Zamuner
 Zustand
