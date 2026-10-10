@@ -16,9 +16,9 @@ export interface SiteMenuProps {
 }
 
 const linkClass =
-  'flex min-h-11 items-center text-[2.4rem] font-light tracking-[-0.02em] uppercase underline-offset-8 hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--border-focus)';
+  'group flex min-h-11 items-baseline gap-5 text-[clamp(3.2rem,7vw,6.4rem)] leading-[1.1] font-light tracking-[-0.035em] uppercase transition-colors hover:text-(--text-secondary) focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--border-focus) motion-reduce:transition-none';
 
-/** Hamburger fixed on the top end corner; opens a side drawer with the sections and the language. */
+/** Hamburger fixed on the top end corner; opens the sections and the language over the whole screen. */
 export const SiteMenu = ({ links, language, labels }: SiteMenuProps) => {
   const [open, setOpen] = useState(false);
   const panelId = useId();
@@ -45,9 +45,10 @@ export const SiteMenu = ({ links, language, labels }: SiteMenuProps) => {
         title={labels.title}
         titleClassName="sr-only"
         closeLabel={labels.close}
+        className="max-w-none border-0 px-[calc(2.4rem_+_env(safe-area-inset-left))] shadow-none md:px-[12%]"
       >
-        <nav aria-label={labels.navigation} className="flex flex-col gap-2 pt-8">
-          {links.map((link) => (
+        <nav aria-label={labels.navigation} className="my-auto flex flex-col gap-1 py-8 md:gap-2">
+          {links.map((link, index) => (
             <a
               key={link.key}
               id={trackingId('menu', 'link', link.key)}
@@ -55,6 +56,12 @@ export const SiteMenu = ({ links, language, labels }: SiteMenuProps) => {
               onClick={close}
               className={linkClass}
             >
+              <span
+                aria-hidden
+                className="w-8 shrink-0 text-[1.2rem] font-light tracking-[0.2em] text-(--text-tertiary)"
+              >
+                {String(index + 1).padStart(2, '0')}
+              </span>
               {link.label}
             </a>
           ))}
@@ -64,7 +71,7 @@ export const SiteMenu = ({ links, language, labels }: SiteMenuProps) => {
           href={language.href}
           hrefLang={language.lang}
           lang={language.lang}
-          className="mt-auto inline-flex min-h-11 w-fit items-center rounded-full border border-(--border-strong) px-5 text-[1.3rem] font-medium tracking-[0.14em]"
+          className="inline-flex min-h-11 w-fit items-center rounded-full border border-(--border-strong) px-5 text-[1.3rem] font-medium tracking-[0.14em]"
         >
           {language.label}
         </a>

@@ -51,9 +51,19 @@ export const ProjectDialog = ({ project, open, onClose, labels }: ProjectDialogP
     return null;
   }
 
+  // The header stays put and only the body scrolls, so the bar never reaches the rounded corners.
   const content = (
-    <div className="flex flex-col gap-8">
-      <div className="flex items-start justify-between gap-6">
+    <div className="flex min-h-0 flex-1 flex-col">
+      <button
+        id={trackingId('project-dialog', 'button', 'close', project.slug)}
+        type="button"
+        aria-label={labels.close}
+        onClick={onClose}
+        className="absolute top-[1.6rem] right-[1.6rem] z-10 flex size-11 items-center justify-center rounded-full border border-(--border-strong) bg-(--surface-primary) transition-colors hover:bg-(--btn-ghost-bg-hover) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--border-focus) motion-reduce:transition-none"
+      >
+        <Icon name="close" size="sm" />
+      </button>
+      <div className="shrink-0 px-6 pr-20 pb-6 md:px-10 md:pt-10 md:pr-24">
         <div className="flex flex-col gap-3">
           <div className="flex flex-wrap gap-x-6 gap-y-1 text-[1.2rem] font-light tracking-[0.2em] text-(--text-tertiary) uppercase">
             <span>{project.kind}</span>
@@ -68,72 +78,65 @@ export const ProjectDialog = ({ project, open, onClose, labels }: ProjectDialogP
             {project.name}
           </RichText>
         </div>
-        <button
-          id={trackingId('project-dialog', 'button', 'close', project.slug)}
-          type="button"
-          aria-label={labels.close}
-          onClick={onClose}
-          className="flex size-11 shrink-0 items-center justify-center rounded-full border border-(--border-strong) transition-colors hover:bg-(--btn-ghost-bg-hover) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--border-focus) motion-reduce:transition-none"
-        >
-          <Icon name="close" size="sm" />
-        </button>
       </div>
-      {/* Width tied to the screen height, so a whole 16:10 screen fits without cropping. */}
-      <div className="w-full md:mx-auto md:max-w-[calc(50dvh*1.6)]">
-        <ProjectGallery slug={project.slug} images={project.images} labels={labels.gallery} />
-      </div>
-      <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-12">
-        <div className="flex flex-col gap-6">
-          <RichText
-            as="h3"
-            variant="h3"
-            weight="light"
-            className="text-[2.4rem] leading-tight tracking-[-0.02em]"
-          >
-            {project.title}
-          </RichText>
-          {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml -- our own Markdown, rendered by Astro at build time */}
-          <div className="project-prose" dangerouslySetInnerHTML={{ __html: project.html }} />
+      <div className="dialog-scroll flex min-h-0 flex-1 flex-col gap-8 overflow-y-auto overscroll-contain px-6 pb-[calc(2.4rem_+_env(safe-area-inset-bottom))] md:mb-[2.4rem] md:px-10 md:pb-6">
+        {/* Width tied to the screen height, so a whole 16:10 screen fits without cropping. */}
+        <div className="w-full md:max-w-[calc(50dvh*1.6)]">
+          <ProjectGallery slug={project.slug} images={project.images} labels={labels.gallery} />
         </div>
-        <div className="flex flex-col gap-6 md:border-l md:border-(--border-default) md:pl-10">
-          <RichText
-            as="h3"
-            variant="s4"
-            className="tracking-[0.2em] text-(--text-tertiary) uppercase"
-          >
-            {labels.stack}
-          </RichText>
-          <ul className="flex flex-wrap gap-2">
-            {project.stack.map((tech) => (
-              <li
-                key={tech}
-                className="rounded-full border border-(--border-strong) px-4 py-1.5 text-[1.2rem]"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-col gap-1 border-t border-(--border-default) pt-5">
-            {project.url && (
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-12">
+          <div className="flex flex-col gap-6">
+            <RichText
+              as="h3"
+              variant="h3"
+              weight="light"
+              className="text-[2.4rem] leading-tight tracking-[-0.02em]"
+            >
+              {project.title}
+            </RichText>
+            {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml -- our own Markdown, rendered by Astro at build time */}
+            <div className="project-prose" dangerouslySetInnerHTML={{ __html: project.html }} />
+          </div>
+          <div className="flex flex-col gap-6 md:border-l md:border-(--border-default) md:pl-10">
+            <RichText
+              as="h3"
+              variant="s4"
+              className="tracking-[0.2em] text-(--text-tertiary) uppercase"
+            >
+              {labels.stack}
+            </RichText>
+            <ul className="flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <li
+                  key={tech}
+                  className="rounded-full border border-(--border-strong) px-4 py-1.5 text-[1.2rem]"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col gap-1 border-t border-(--border-default) pt-5">
+              {project.url && (
+                <a
+                  id={trackingId('project-dialog', 'link', 'visit', project.slug)}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkStyles}
+                >
+                  {labels.visit} {project.urlLabel ?? project.url}
+                  <Icon name="arrow-forward" size="sm" />
+                </a>
+              )}
               <a
-                id={trackingId('project-dialog', 'link', 'visit', project.slug)}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                id={trackingId('project-dialog', 'link', 'page', project.slug)}
+                href={project.href}
                 className={linkStyles}
               >
-                {labels.visit} {project.urlLabel ?? project.url}
+                {labels.page}
                 <Icon name="arrow-forward" size="sm" />
               </a>
-            )}
-            <a
-              id={trackingId('project-dialog', 'link', 'page', project.slug)}
-              href={project.href}
-              className={linkStyles}
-            >
-              {labels.page}
-              <Icon name="arrow-forward" size="sm" />
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -146,8 +149,8 @@ export const ProjectDialog = ({ project, open, onClose, labels }: ProjectDialogP
       onClose={onClose}
       maxHeight="tall"
       aria-label={project.name}
-      // The panel scrolls instead of the inner body, so the bar sits on its edge.
-      className="dialog-scroll max-w-[1080px] overflow-y-auto overscroll-contain rounded-[2.4rem] bg-(--surface-primary) p-10 shadow-none [&>div]:flex-none [&>div]:overflow-visible"
+      // The lib's body becomes a plain column; our body scrolls on the panel's edge.
+      className="relative max-w-[1080px] overflow-hidden rounded-[2.4rem] bg-(--surface-primary) p-0 shadow-none [&>div]:m-0 [&>div]:flex [&>div]:flex-col [&>div]:overflow-hidden [&>div]:p-0"
     >
       {content}
     </Modal>
@@ -156,8 +159,8 @@ export const ProjectDialog = ({ project, open, onClose, labels }: ProjectDialogP
       open={open}
       onClose={onClose}
       aria-label={project.name}
-      // At most 80% of the screen; the scroll comes with ui-library > 3.0.1, drop it then.
-      className="dialog-scroll max-h-[80dvh] overflow-y-auto overscroll-contain rounded-t-[2.4rem] bg-(--surface-primary) pb-[calc(1.5rem_+_env(safe-area-inset-bottom))] shadow-none"
+      // At most 80% of the screen; only our body scrolls, below the handle and the title.
+      className="relative flex max-h-[80dvh] flex-col overflow-hidden rounded-t-[2.4rem] bg-(--surface-primary) px-0 pb-0 shadow-none"
     >
       {content}
     </BottomSheet>

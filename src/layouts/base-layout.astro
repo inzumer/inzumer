@@ -3,6 +3,7 @@ import '@styles/global.css';
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import { PageLoader } from '@components/organisms/PageLoader';
 import { SiteMenu } from '@components/organisms/SiteMenu';
 import { SiteRail } from '@components/organisms/SiteRail';
 import { OG_IMAGE, SETTINGS_STORAGE_KEY, SITE_AUTHOR } from '@constants';
@@ -91,6 +92,7 @@ const sections = ['about', 'services', 'projects', 'ecosystem', 'experience', 'c
     >
       {common.skipLink}
     </a>
+    <PageLoader client:idle label={common.loader.page} messages={common.loader.messages} />
     <SiteMenu
       client:idle
       links={sections.map((key) => ({ key, href: `${home}#${key}`, label: common.nav[key] }))}

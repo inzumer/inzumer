@@ -155,7 +155,12 @@ const homeHref = localizedPath(lang, 'home');
           {home.contact.text}
         </RichText>
       </div>
-      <ContactForm client:visible lang={lang} labels={home.contact} />
+      <ContactForm
+        client:visible
+        lang={lang}
+        labels={home.contact}
+        loaderMessages={common.loader.messages}
+      />
     </section>
   </div>
 </BaseLayout>

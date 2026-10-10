@@ -52,6 +52,7 @@ tablist
 tabpanel
 tenés
 testeados
+testid
 unstub
 vercel
 vitest

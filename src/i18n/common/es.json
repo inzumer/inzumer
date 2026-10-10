@@ -35,5 +35,16 @@
   "carousel": {
     "previous": "Anterior",
     "next": "Siguiente"
+  },
+  "loader": {
+    "page": "Cargando la página",
+    "messages": [
+      "¿Quieres construir algo nuevo?",
+      "¿Y si es accesible desde el primer día?",
+      "¿Un café mientras compila?",
+      "¿Tienes una idea que no te deja de dar vueltas?",
+      "¿Cuánto debería tardar en cargar? Menos que esto.",
+      "¿Modo oscuro o modo claro?"
+    ]
   }
 }

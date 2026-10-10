@@ -18,7 +18,8 @@ describe('ProjectGallery', () => {
       'id',
       'gallery-button-next-belo',
     );
-    expect(screen.getByRole('button', { name: 'Ir a la pantalla 1' })).toBeInTheDocument();
+    expect(screen.getByText('Pantalla 1 / 2')).toBeInTheDocument();
+    expect(screen.getByText('01')).toBeInTheDocument();
   });
 
   it('should leave out the buttons with a single screen', () => {
@@ -27,17 +28,7 @@ describe('ProjectGallery', () => {
     );
 
     expect(screen.queryByRole('button', { name: 'Pantalla siguiente' })).not.toBeInTheDocument();
-  });
-
-  it('should drop the dots when there are too many screens to fit', () => {
-    const many = Array.from({ length: 7 }, (_, index) => ({
-      ...projectFixture('belo', 'Belo').cover,
-      src: `/${index}.webp`,
-    }));
-    render(<ProjectGallery slug="belo" images={many} labels={dialogLabels.gallery} />);
-
-    expect(screen.queryByRole('button', { name: 'Ir a la pantalla 1' })).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Pantalla siguiente' })).toBeInTheDocument();
+    expect(screen.queryByText('Pantalla 1 / 1')).not.toBeInTheDocument();
   });
 
   it('should render nothing without screens', () => {

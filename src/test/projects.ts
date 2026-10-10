@@ -28,7 +28,6 @@ export const dialogLabels: ProjectDialogLabels = {
     previous: 'Pantalla anterior',
     next: 'Pantalla siguiente',
     slide: 'Pantalla',
-    goTo: 'Ir a la pantalla',
     open: 'se abre en tamaño completo',
   },
 };

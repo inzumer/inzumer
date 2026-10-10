@@ -35,5 +35,16 @@
   "carousel": {
     "previous": "Previous",
     "next": "Next"
+  },
+  "loader": {
+    "page": "Loading the page",
+    "messages": [
+      "Want to build something new?",
+      "What if it is accessible from day one?",
+      "Coffee while it compiles?",
+      "Got an idea you keep coming back to?",
+      "How fast should it load? Faster than this.",
+      "Dark mode or light mode?"
+    ]
   }
 }
