@@ -29,7 +29,8 @@ const theme = createEmailTheme({
     body: "Inter, 'Helvetica Neue', Arial, sans-serif",
     heading: "Inter, 'Helvetica Neue', Arial, sans-serif",
   },
-  radius: '999px',
+  // Rounded cards; pill buttons and the header image come with inzumerEmailTheme (@inzumer/email 0.4).
+  radius: '18px',
 });
 
 const brand = { name: 'INZUMER' };
