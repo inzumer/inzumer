@@ -23,7 +23,7 @@ src/utils  →  src/hooks  →  src/components  →  src/pages / src/layouts
 - `src/utils`: pure helpers (locale, routes, settings, SEO, contact validation, rate limit). No React.
 - `src/hooks`: React state (`useColorScheme`).
 - `src/components`: every UI piece (atoms / molecules / organisms) on top of `@inzumer/ui-library`.
-- `src/constants`: site values. `src/services`: the contact client and, server-only, the Gmail mailer.
+- `src/constants`: site values. `src/services`: the contact client and, server-only, the Resend mailer.
 - `src/content/projects`: one Markdown file per project and language (`<lang>/<slug>.md`).
 - `src/i18n`: `<folder>/{en,es}.json`; `profile` is the single source for experience, skills and the CV.
 - `src/pages/api/contact.ts`: the only on-demand route (Vercel function); the rest is static.

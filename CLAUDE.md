@@ -8,7 +8,7 @@ Guidance for Claude Code (and any other AI coding agent) working in this reposit
 Senior Frontend Engineer.
 
 - Stack: Astro (static output) + React 19 islands, TypeScript strict, Tailwind v4 + `@inzumer/tokens`
-  preset, `@inzumer/ui-library` components, `@inzumer/email` for the contact emails, Vitest +
+  preset, `@inzumer/ui-library` components, `@inzumer/email` for the contact emails (sent through Resend), Vitest +
   Testing Library. Hosted on Vercel (`@astrojs/vercel`): every page is static, only
   `/api/contact` runs on demand.
 - Shared packages live in `inzumer-<name>` repos and are published as `@inzumer/<name>`. The
@@ -56,7 +56,7 @@ Key commands (Node from `.nvmrc`, pnpm from `packageManager`):
 - **Security**: a strict Content-Security-Policy is generated at build time (`security.csp` in
   `astro.config.mjs`); a new inline script needs its hash there. The contact auto-reply never repeats
   the sender's message (it would turn the form into a spam relay).
-- **Secrets**: `GMAIL_APP_PASSWORD` lives only in Vercel (and a local `.env`, gitignored).
+- **Secrets**: `RESEND_API_KEY` lives only in Vercel (and a local `.env`, gitignored).
 - **Dependencies**: latest compatible versions, `pnpm audit` clean, updated by hand (no Dependabot).
 
 ## Commit messages & PR titles

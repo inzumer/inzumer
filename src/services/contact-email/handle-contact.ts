@@ -2,7 +2,7 @@ import { contactSchema } from '@utils';
 import { sendContactEmails, type MailTransport } from './mailer';
 
 export interface HandleContactOptions {
-  /** `null` when the Gmail app password isn't configured. */
+  /** `null` when the Resend key isn't configured. */
   transport: MailTransport | null;
   /** Rate limit by client address; `false` means too many messages. */
   allow: (key: string) => boolean;
@@ -34,7 +34,7 @@ export const handleContact = async (
   }
 
   if (!transport) {
-    console.error('Contact form: GMAIL_APP_PASSWORD is not set.');
+    console.error('Contact form: RESEND_API_KEY is not set.');
 
     return status(503);
   }

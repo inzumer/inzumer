@@ -14,9 +14,9 @@ const request = () =>
   });
 
 describe('POST /api/contact', () => {
-  it('should answer 503 while the Gmail app password is missing', async () => {
+  it('should answer 503 while the Resend key is missing', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => {});
-    vi.stubEnv('GMAIL_APP_PASSWORD', '');
+    vi.stubEnv('RESEND_API_KEY', '');
 
     const response = await POST({ request: request(), clientAddress: '1.2.3.4' } as APIContext);
 

@@ -1,4 +1,3 @@
-import nodemailer from 'nodemailer';
 import type { ContactInput } from '@utils';
 import { NOTIFICATION_ADDRESS, renderAutoReply, renderNotification } from './contact-email';
 
@@ -15,17 +14,37 @@ export interface MailTransport {
   sendMail: (message: MailMessage) => Promise<unknown>;
 }
 
-/** Gmail SMTP with an app password (`GMAIL_APP_PASSWORD`, set in Vercel; never in the repo). */
-export const createGmailTransport = (user: string, appPassword: string): MailTransport =>
-  nodemailer.createTransport({ service: 'gmail', auth: { user, pass: appPassword } });
+export const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 
-/** Sends the notice to Nahuel and the confirmation to the sender, both from the Gmail account. */
+/** Sender on the verified inzumer.com domain (no mailbox needed); replies go to Gmail. */
+export const CONTACT_SENDER = 'Nahuel Zamuner <hola@inzumer.com>';
+
+/** Resend's HTTP API (`RESEND_API_KEY`, set in Vercel; never in the repo). */
+export const createResendTransport = (
+  apiKey: string,
+  fetcher: typeof fetch = fetch,
+): MailTransport => ({
+  sendMail: async ({ replyTo, ...message }) => {
+    const response = await fetcher(RESEND_ENDPOINT, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...message, ...(replyTo && { reply_to: replyTo }) }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Resend answered ${response.status}: ${await response.text()}`);
+    }
+
+    return response.json();
+  },
+});
+
+/** Sends the notice to Nahuel and the confirmation to the sender; both can be answered by email. */
 export const sendContactEmails = async (
   input: ContactInput,
   transport: MailTransport,
-  sender: string = NOTIFICATION_ADDRESS,
+  from: string = CONTACT_SENDER,
 ): Promise<void> => {
-  const from = `Nahuel Zamuner <${sender}>`;
   const [notification, autoReply] = await Promise.all([
     renderNotification(input),
     renderAutoReply(input),
@@ -37,5 +56,5 @@ export const sendContactEmails = async (
     replyTo: input.email,
     ...notification,
   });
-  await transport.sendMail({ from, to: input.email, ...autoReply });
+  await transport.sendMail({ from, to: input.email, replyTo: NOTIFICATION_ADDRESS, ...autoReply });
 };

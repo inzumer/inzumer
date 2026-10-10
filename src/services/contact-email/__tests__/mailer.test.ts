@@ -1,5 +1,9 @@
-import nodemailer from 'nodemailer';
-import { createGmailTransport, sendContactEmails, type MailMessage } from '../mailer';
+import {
+  createResendTransport,
+  RESEND_ENDPOINT,
+  sendContactEmails,
+  type MailMessage,
+} from '../mailer';
 
 const input = {
   name: 'Ada',
@@ -8,12 +12,21 @@ const input = {
   lang: 'es',
 } as const;
 
+const message: MailMessage = {
+  from: 'Nahuel Zamuner <hola@inzumer.com>',
+  to: 'ada@example.com',
+  replyTo: 'inzumer@gmail.com',
+  subject: 'Hola',
+  html: '<p>Hola</p>',
+  text: 'Hola',
+};
+
 describe('mailer', () => {
   it('should send the notice to Nahuel first, then the confirmation to the sender', async () => {
     const sent: MailMessage[] = [];
     const transport = {
-      sendMail: async (message: MailMessage) => {
-        sent.push(message);
+      sendMail: async (mail: MailMessage) => {
+        sent.push(mail);
       },
     };
 
@@ -23,29 +36,53 @@ describe('mailer', () => {
       {
         to: 'inzumer@gmail.com',
         replyTo: 'ada@example.com',
-        from: 'Nahuel Zamuner <inzumer@gmail.com>',
+        from: 'Nahuel Zamuner <hola@inzumer.com>',
       },
-      { to: 'ada@example.com', replyTo: undefined, from: 'Nahuel Zamuner <inzumer@gmail.com>' },
+      {
+        to: 'ada@example.com',
+        replyTo: 'inzumer@gmail.com',
+        from: 'Nahuel Zamuner <hola@inzumer.com>',
+      },
     ]);
     expect(sent[1]?.subject).toBe('Gracias por escribirme, Ada');
   });
 
   it('should not confirm when the notice fails', async () => {
-    const sendMail = vi.fn().mockRejectedValueOnce(new Error('smtp'));
+    const sendMail = vi.fn().mockRejectedValueOnce(new Error('resend'));
 
-    await expect(sendContactEmails(input, { sendMail })).rejects.toThrow('smtp');
+    await expect(sendContactEmails(input, { sendMail })).rejects.toThrow('resend');
     expect(sendMail).toHaveBeenCalledOnce();
   });
 
-  it('should build a Gmail transport with the app password', () => {
-    const createTransport = vi.spyOn(nodemailer, 'createTransport');
+  it('should post to Resend with the key and the reply-to address', async () => {
+    const fetcher = vi.fn().mockResolvedValue(Response.json({ id: 'email-1' }));
 
-    createGmailTransport('inzumer@gmail.com', 'app-password');
-
-    expect(createTransport).toHaveBeenCalledWith({
-      service: 'gmail',
-      auth: { user: 'inzumer@gmail.com', pass: 'app-password' },
+    await expect(
+      createResendTransport('re_test', fetcher).sendMail(message),
+    ).resolves.toStrictEqual({
+      id: 'email-1',
     });
-    createTransport.mockRestore();
+    expect(fetcher).toHaveBeenCalledWith(RESEND_ENDPOINT, {
+      method: 'POST',
+      headers: { Authorization: 'Bearer re_test', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: message.from,
+        to: message.to,
+        subject: message.subject,
+        html: message.html,
+        text: message.text,
+        reply_to: 'inzumer@gmail.com',
+      }),
+    });
+  });
+
+  it('should leave out reply-to when there is none and fail on an error answer', async () => {
+    const { replyTo: _, ...withoutReply } = message;
+    const fetcher = vi.fn().mockResolvedValue(new Response('domain not verified', { status: 403 }));
+
+    await expect(createResendTransport('re_test', fetcher).sendMail(withoutReply)).rejects.toThrow(
+      'Resend answered 403: domain not verified',
+    );
+    expect(JSON.parse(fetcher.mock.calls[0]?.[1]?.body as string)).not.toHaveProperty('reply_to');
   });
 });

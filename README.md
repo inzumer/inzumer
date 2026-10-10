@@ -8,7 +8,7 @@ Portfolio of Nahuel Zamuner, Senior Frontend Engineer, in English and Spanish:
 - [Astro](https://astro.build) static pages with React 19 islands, TypeScript strict.
 - [Tailwind CSS 4](https://tailwindcss.com) with the `@inzumer/tokens` preset and the
   `@inzumer/ui-library` components.
-- Contact form: an Astro endpoint on Vercel that sends the emails through Gmail, built with
+- Contact form: an Astro endpoint on Vercel that sends the emails through Resend, built with
   `@inzumer/email`.
 - Vitest + Testing Library (90% coverage gate), ESLint, Prettier, cspell and an axe audit.
 
@@ -46,12 +46,12 @@ src/
 ## Contact emails
 
 `/api/contact` validates the form, drops bots (honeypot) and floods (5 per address every 10
-minutes), then sends two emails from `inzumer@gmail.com`: the message to Nahuel, with "reply to"
-set to the sender, and a confirmation to the sender in their language. The confirmation never
-repeats the message.
+minutes), then sends two emails from `hola@inzumer.com` through [Resend](https://resend.com): the
+message to Nahuel, with "reply to" set to the sender, and a confirmation to the sender in their
+language, with "reply to" set to inzumer@gmail.com. The confirmation never repeats the message.
 
-It needs `GMAIL_APP_PASSWORD`, a Google app password for that account (Google Account → Security →
-2-Step Verification → App passwords), set in Vercel. Locally, copy `.env.example` to `.env`.
+It needs `RESEND_API_KEY` (set in Vercel) and the `inzumer.com` domain verified in Resend (DNS
+records in Vercel; no mailbox on the domain is needed). Locally, copy `.env.example` to `.env`.
 
 ## Deploy
 
