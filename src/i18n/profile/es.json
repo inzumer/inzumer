@@ -96,15 +96,44 @@
     }
   ],
   "education": [
-    { "school": "Platzi", "program": "English Academy", "dates": "2025 – 2026" },
-    { "school": "Platzi", "program": "TypeScript Fundamentals", "dates": "2025" },
-    { "school": "Da Vinci School", "program": "Analista de Sistemas", "dates": "2022 – 2023" },
-    { "school": "Digital House", "program": "Frontend Developer", "dates": "2021 – 2022" },
-    { "school": "Platzi", "program": "Frontend Architect", "dates": "2020 – 2021" }
+    {
+      "school": "Platzi",
+      "program": "English Academy",
+      "dates": "2025 – 2026"
+    },
+    {
+      "school": "Platzi",
+      "program": "TypeScript Fundamentals",
+      "dates": "2025"
+    },
+    {
+      "school": "Da Vinci School",
+      "program": "Analista de Sistemas",
+      "dates": "2022 – 2023"
+    },
+    {
+      "school": "Digital House",
+      "program": "Frontend Developer",
+      "dates": "2021 – 2022"
+    },
+    {
+      "school": "Platzi",
+      "program": "Frontend Architect",
+      "dates": "2020 – 2021"
+    }
   ],
   "languages": [
-    { "name": "Español", "level": "Nativo" },
-    { "name": "Inglés", "level": "Profesional" },
-    { "name": "Italiano", "level": "Limitado" }
+    {
+      "name": "Español",
+      "level": "Nativo"
+    },
+    {
+      "name": "Inglés",
+      "level": "Profesional"
+    },
+    {
+      "name": "Italiano",
+      "level": "Básico (A2)"
+    }
   ]
 }

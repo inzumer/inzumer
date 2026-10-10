@@ -13,7 +13,7 @@ const input = {
 } as const;
 
 const message: MailMessage = {
-  from: 'Nahuel Zamuner <hola@inzumer.com>',
+  from: 'Nahuel Zamuner <contact@inzumer.com>',
   to: 'ada@example.com',
   replyTo: 'inzumer@gmail.com',
   subject: 'Hola',
@@ -36,12 +36,12 @@ describe('mailer', () => {
       {
         to: 'inzumer@gmail.com',
         replyTo: 'ada@example.com',
-        from: 'Nahuel Zamuner <hola@inzumer.com>',
+        from: 'Nahuel Zamuner <contact@inzumer.com>',
       },
       {
         to: 'ada@example.com',
         replyTo: 'inzumer@gmail.com',
-        from: 'Nahuel Zamuner <hola@inzumer.com>',
+        from: 'Nahuel Zamuner <contact@inzumer.com>',
       },
     ]);
     expect(sent[1]?.subject).toBe('Gracias por escribirme, Ada');

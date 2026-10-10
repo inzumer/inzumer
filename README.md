@@ -46,7 +46,7 @@ src/
 ## Contact emails
 
 `/api/contact` validates the form, drops bots (honeypot) and floods (5 per address every 10
-minutes), then sends two emails from `hola@inzumer.com` through [Resend](https://resend.com): the
+minutes), then sends two emails from `contact@inzumer.com` through [Resend](https://resend.com): the
 message to Nahuel, with "reply to" set to the sender, and a confirmation to the sender in their
 language, with "reply to" set to inzumer@gmail.com. The confirmation never repeats the message.
 

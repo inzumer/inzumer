@@ -17,7 +17,7 @@ export interface MailTransport {
 export const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 
 /** Sender on the verified inzumer.com domain (no mailbox needed); replies go to Gmail. */
-export const CONTACT_SENDER = 'Nahuel Zamuner <hola@inzumer.com>';
+export const CONTACT_SENDER = 'Nahuel Zamuner <contact@inzumer.com>';
 
 /** Resend's HTTP API (`RESEND_API_KEY`, set in Vercel; never in the repo). */
 export const createResendTransport = (
