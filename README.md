@@ -43,6 +43,14 @@ src/
   utils/        locale, routes, settings, SEO, contact schema, rate limit…
 ```
 
+## Projects
+
+The home shows the projects as tabs; **View project** opens all of it without leaving the page: a
+`Modal` on desktop and a `BottomSheet` on phones (ui-library), with the screens in a carousel and
+the Markdown body. Each project keeps its own page for search engines and sharing, linked from the
+dialog. To add one, write `src/content/projects/{en,es}/<slug>.md` with its images in
+`src/assets/projects/<slug>/`.
+
 ## Contact emails
 
 `/api/contact` validates the form, drops bots (honeypot) and floods (5 per address every 10

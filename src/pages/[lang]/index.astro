@@ -5,12 +5,14 @@ import { RichText } from '@inzumer/ui-library';
 import { isServiceIconName } from '@components/atoms/Icons';
 import { SectionHeader } from '@components/molecules/SectionHeader';
 import { ContactForm } from '@components/organisms/ContactForm';
+import { EcosystemSection } from '@components/organisms/EcosystemSection';
 import { ExperienceList } from '@components/organisms/ExperienceList';
 import { ProjectShowcase } from '@components/organisms/ProjectShowcase';
 import { ServicesCarousel } from '@components/organisms/ServicesCarousel';
 import { getTranslations } from '@i18n';
 import BaseLayout from '@layouts/base-layout.astro';
 import {
+  galleryImage,
   localePaths,
   localizedPath,
   personSchema,
@@ -27,9 +29,15 @@ const home = getTranslations(lang, 'home');
 const profile = getTranslations(lang, 'profile');
 
 const projects = await Promise.all(
-  projectsFor(await getCollection('projects'), lang).map(async ({ id, data }) => {
+  projectsFor(await getCollection('projects'), lang).map(async ({ id, data, rendered }) => {
     const cover = await getImage({ src: data.cover, width: 1200, format: 'webp' });
     const slug = projectSlug(id);
+    // The dialog's carousel: the cover first, then the screens; they load only when it opens.
+    const screens = await Promise.all(
+      data.gallery.map(async (image) =>
+        galleryImage(await getImage({ src: image.src, width: 1600, format: 'webp' }), image.alt),
+      ),
+    );
 
     return {
       slug,
@@ -40,12 +48,11 @@ const projects = await Promise.all(
       summary: data.summary,
       stack: data.stack,
       href: localizedPath(lang, 'projects', slug),
-      cover: {
-        src: cover.src,
-        width: Number(cover.attributes['width'] ?? 1200),
-        height: Number(cover.attributes['height'] ?? 900),
-        alt: data.coverAlt,
-      },
+      ...(data.url && { url: data.url }),
+      ...(data.urlLabel && { urlLabel: data.urlLabel }),
+      html: rendered?.html ?? '',
+      cover: galleryImage(cover, data.coverAlt),
+      images: [galleryImage(cover, data.coverAlt), ...screens],
     };
   }),
 );
@@ -119,7 +126,17 @@ const homeHref = localizedPath(lang, 'home');
           view: home.projects.view,
           previous: home.projects.previous,
           next: home.projects.next,
+          dialog: home.projects.dialog,
         }}
+      />
+    </div>
+
+    <div id="ecosystem" class="scroll-mt-16">
+      <EcosystemSection
+        title={home.ecosystem.title}
+        intro={home.ecosystem.intro}
+        pieces={home.ecosystem.pieces}
+        ai={home.ecosystem.ai}
       />
     </div>
 
